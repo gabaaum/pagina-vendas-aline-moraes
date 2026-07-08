@@ -24,6 +24,10 @@
  .js .step.is-active .num{transform:scale(1);filter:saturate(1);box-shadow:0 0 0 7px rgba(92,115,80,.13),0 10px 24px rgba(42,48,38,.15)}
  @media(max-width:620px){.timeline:before,.timeline:after{left:27px;top:28px;bottom:60px}}
  @media(prefers-reduced-motion:reduce){.js .step,.js .step .num,.timeline:after{transition:none}.js .step{opacity:1;transform:none}.js .step .num{transform:none}}
+ .fit ul{list-style:none;padding-left:0}
+ .fit li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+ .fit-box.yes li:before{content:"✅"}
+ .fit-box.no li:before{content:"❌"}
 </style>
 </head>
 <body>
