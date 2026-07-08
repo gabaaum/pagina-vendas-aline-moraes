@@ -13,6 +13,17 @@
  .cta{text-align:center}
  .quote{padding:30px 34px;border-left:0;border-radius:8px;background:var(--green);color:var(--cream);box-shadow:0 16px 36px rgba(92,115,80,.22)}
  @media(max-width:620px){.quote{padding:26px 24px;font-size:26px}}
+ .timeline{position:relative;--progress:0}
+ .timeline:before,.timeline:after{content:"";position:absolute;left:35px;top:36px;bottom:72px;width:2px;border-radius:2px;transform-origin:top}
+ .timeline:before{background:#c5d0c0}
+ .timeline:after{background:var(--green);transform:scaleY(var(--progress));transition:transform .18s linear}
+ .step:not(:last-child):before{display:none}
+ .js .step{opacity:.34;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+ .js .step .num{position:relative;z-index:2;transform:scale(.84);filter:saturate(.6);transition:transform .48s cubic-bezier(.2,.8,.2,1),filter .4s,box-shadow .4s}
+ .js .step.is-active{opacity:1;transform:translateY(0)}
+ .js .step.is-active .num{transform:scale(1);filter:saturate(1);box-shadow:0 0 0 7px rgba(92,115,80,.13),0 10px 24px rgba(42,48,38,.15)}
+ @media(max-width:620px){.timeline:before,.timeline:after{left:27px;top:28px;bottom:60px}}
+ @media(prefers-reduced-motion:reduce){.js .step,.js .step .num,.timeline:after{transition:none}.js .step{opacity:1;transform:none}.js .step .num{transform:none}}
 </style>
 </head>
 <body>
@@ -30,4 +41,26 @@
 <section class="section sand"><div class="wrap"><div class="section-title"><h2>Histórias de quem já começou</h2><p>Área preparada para os relatos de clientes da corretora.</p></div><div class="testimonials"><div class="testimonial">INSERIR PRINT<br>DE CLIENTE 01</div><div class="testimonial">INSERIR PRINT<br>DE CLIENTE 02</div><div class="testimonial">INSERIR PRINT<br>DE CLIENTE 03</div></div></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><h2>Perguntas frequentes</h2></div><div class="faq"><details><summary>Preciso ter conhecimento prévio sobre o mercado internacional?</summary><p>Não. A consultoria conduz você desde o diagnóstico até a implementação, no seu ritmo.</p></details><details><summary>Preciso de muito dinheiro para investir no exterior?</summary><p>Não. Sua estratégia será desenhada de acordo com a sua realidade e capacidade de aporte.</p></details><details><summary>Como funciona a abertura da conta internacional?</summary><p>Eu oriento todo o processo, da abertura até a transferência dos recursos.</p></details><details><summary>E a tributação internacional?</summary><p>Os princípios fundamentais são abordados de forma prática. Quando houver necessidade contábil específica, indico o profissional adequado.</p></details><details><summary>Em quanto tempo terei a carteira montada?</summary><p>Em média, de 30 a 45 dias, dependendo do seu ritmo e da agenda.</p></details><details><summary>Existe acompanhamento depois dos 4 encontros?</summary><p>Sim. Você pode contratar encontros avulsos para revisão, rebalanceamento ou decisões específicas.</p></details><details><summary>Quem entra em contato depois do agendamento?</summary><p>A própria Aline ou alguém da equipe direta dela.</p></details></div></div></section>
 <section class="final"><div class="wrap"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></section>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var timeline=document.querySelector('.timeline');
+  if(!timeline) return;
+  var steps=Array.from(timeline.querySelectorAll('.step'));
+  function updateLine(){
+    var rect=timeline.getBoundingClientRect();
+    var start=window.innerHeight*.72;
+    var progress=Math.max(0,Math.min(1,(start-rect.top)/(rect.height-window.innerHeight*.22)));
+    timeline.style.setProperty('--progress',progress);
+  }
+  if(!('IntersectionObserver' in window)){steps.forEach(function(step){step.classList.add('is-active')});return}
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){if(entry.isIntersecting) entry.target.classList.add('is-active')});
+  },{threshold:.32,rootMargin:'0px 0px -8% 0px'});
+  steps.forEach(function(step){observer.observe(step)});
+  window.addEventListener('scroll',updateLine,{passive:true});
+  window.addEventListener('resize',updateLine);
+  updateLine();
+})();
+</script>
 </body></html>
