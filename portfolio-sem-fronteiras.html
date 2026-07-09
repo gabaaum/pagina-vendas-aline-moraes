@@ -31,6 +31,17 @@
  .faq summary{display:flex;align-items:center;justify-content:space-between;gap:18px}
  .faq summary:after{content:"↓";display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--green);color:var(--cream);font-size:21px;line-height:1;transition:transform .25s ease,background .25s ease;box-shadow:0 8px 18px rgba(92,115,80,.2)}
  .faq details[open] summary:after{transform:rotate(180deg);background:var(--dark)}
+ .depo-carousel{position:relative;max-width:860px;margin:0 auto;overflow:hidden;border-radius:14px;background:#faf6eb;border:1px solid #d6cdb7;box-shadow:0 24px 60px rgba(42,48,38,.14)}
+ .depo-track{display:flex;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+ .depo-slide{min-width:100%;padding:28px;display:grid;place-items:center}
+ .depo-slide img{display:block;max-width:100%;max-height:620px;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 12px 32px rgba(42,48,38,.14);background:#fff}
+ .depo-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:64px;border:0;border-radius:999px;background:rgba(35,42,32,.82);color:var(--cream);font-size:34px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s}
+ .depo-nav:hover{background:var(--green);transform:translateY(-50%) scale(1.04)}
+ .depo-prev{left:16px}.depo-next{right:16px}
+ .depo-dots{display:flex;justify-content:center;gap:9px;margin:22px auto 0}
+ .depo-dot{width:10px;height:10px;border-radius:999px;border:0;background:#c8bea7;cursor:pointer;padding:0;transition:.2s}
+ .depo-dot.is-active{width:30px;background:var(--green)}
+ @media(max-width:620px){.depo-slide{padding:18px}.depo-slide img{max-height:520px}.depo-nav{width:42px;height:56px;font-size:30px}.depo-prev{left:8px}.depo-next{right:8px}}
 </style>
 </head>
 <body>
@@ -45,6 +56,7 @@
 <section class="section"><div class="wrap"><div class="section-title"><h2>Prefiro ser direta</h2><p>Para atender menos pessoas e entregar um trabalho realmente personalizado.</p></div><div class="fit"><div class="fit-box yes"><h3>Faz sentido para quem</h3><ul><li>Busca uma estratégia global de longo prazo.</li><li>Já tem a reserva de emergência organizada.</li><li>Quer participar das decisões com clareza.</li><li>Valoriza acompanhamento individual.</li></ul></div><div class="fit-box no"><h3>Não é para quem</h3><ul><li>Busca rentabilidade rápida ou day trade.</li><li>Quer copiar uma carteira pronta.</li><li>Ainda não construiu reserva de emergência.</li><li>Não tem disposição para participar do processo.</li></ul></div></div></div></section>
 <section class="section sand"><div class="wrap"><div class="section-title"><div class="kicker" style="justify-content:center">Próximo passo</div><h2>Uma conversa inicial, sem custo e sem compromisso</h2><p>Eu entendo seu momento e seus objetivos, você tira suas dúvidas e avaliamos se a consultoria faz sentido. Caso não faça, indico o melhor próximo passo.</p></div><div style="text-align:center"><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note">Atendimento individual. Vagas limitadas por mês.</p></div></div></section>
 <section class="section"><div class="wrap"><div class="price"><div class="kicker" style="justify-content:center">Investimento</div><h2>Consultoria Portfólio sem Fronteiras</h2><div class="value">R$ 5.997 à vista</div><p>ou em até 6x de R$ 1.025,10</p><ul><li>4 encontros online com Aline</li><li>Diagnóstico, Mapa da Independência Financeira e estratégia</li><li>Orientação para abertura da conta e implementação</li><li>Suporte por WhatsApp durante o processo</li><li>Acesso à recorrência opcional</li></ul><br><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note">Quanto custa adiar essa decisão por mais 12 meses?</p></div></div></section>
+<section class="section sand"><div class="wrap"><div class="section-title"><div class="kicker" style="justify-content:center">Depoimentos</div><h2>Histórias de quem já começou</h2><p>Relatos reais de quem já deu os primeiros passos com mais clareza e direção.</p></div><div class="depo-carousel" aria-label="Carrossel de depoimentos"><button class="depo-nav depo-prev" type="button" aria-label="Depoimento anterior">‹</button><div class="depo-track"><div class="depo-slide"><img src="assets/depoimentos/depoimento-01.jpeg" alt="Depoimento de cliente 01" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-02.jpeg" alt="Depoimento de cliente 02" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-03.jpeg" alt="Depoimento de cliente 03" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-04.jpeg" alt="Depoimento de cliente 04" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-05.jpeg" alt="Depoimento de cliente 05" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-06.jpeg" alt="Depoimento de cliente 06" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-07.jpeg" alt="Depoimento de cliente 07" loading="lazy"></div></div><button class="depo-nav depo-next" type="button" aria-label="Próximo depoimento">›</button></div><div class="depo-dots" aria-label="Navegação dos depoimentos"></div></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><h2>Perguntas frequentes</h2></div><div class="faq"><details><summary>Preciso ter conhecimento prévio sobre o mercado internacional?</summary><p>Não. A consultoria conduz você desde o diagnóstico até a implementação, no seu ritmo.</p></details><details><summary>Preciso de muito dinheiro para investir no exterior?</summary><p>Não. Sua estratégia será desenhada de acordo com a sua realidade e capacidade de aporte.</p></details><details><summary>Como funciona a abertura da conta internacional?</summary><p>Eu oriento todo o processo, da abertura até a transferência dos recursos.</p></details><details><summary>E a tributação internacional?</summary><p>Os princípios fundamentais são abordados de forma prática. Quando houver necessidade contábil específica, indico o profissional adequado.</p></details><details><summary>Em quanto tempo terei a carteira montada?</summary><p>Em média, de 30 a 45 dias, dependendo do seu ritmo e da agenda.</p></details><details><summary>Existe acompanhamento depois dos 4 encontros?</summary><p>Sim. Você pode contratar encontros avulsos para revisão, rebalanceamento ou decisões específicas.</p></details><details><summary>Quem entra em contato depois do agendamento?</summary><p>A própria Aline ou alguém da equipe direta dela.</p></details></div></div></section>
 <section class="final"><div class="wrap"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></section>
 <script>
@@ -67,6 +79,40 @@ document.documentElement.classList.add('js');
   window.addEventListener('scroll',updateLine,{passive:true});
   window.addEventListener('resize',updateLine);
   updateLine();
+})();
+(function(){
+  var carousel=document.querySelector('.depo-carousel');
+  if(!carousel) return;
+  var track=carousel.querySelector('.depo-track');
+  var slides=Array.from(carousel.querySelectorAll('.depo-slide'));
+  var prev=carousel.querySelector('.depo-prev');
+  var next=carousel.querySelector('.depo-next');
+  var dotsWrap=document.querySelector('.depo-dots');
+  var index=0;
+  var timer;
+  function goTo(nextIndex){
+    index=(nextIndex+slides.length)%slides.length;
+    track.style.transform='translateX(-'+(index*100)+'%)';
+    Array.from(dotsWrap.children).forEach(function(dot,i){dot.classList.toggle('is-active',i===index)});
+  }
+  function restart(){
+    window.clearInterval(timer);
+    timer=window.setInterval(function(){goTo(index+1)},5200);
+  }
+  slides.forEach(function(_,i){
+    var dot=document.createElement('button');
+    dot.type='button';
+    dot.className='depo-dot';
+    dot.setAttribute('aria-label','Ir para depoimento '+(i+1));
+    dot.addEventListener('click',function(){goTo(i);restart()});
+    dotsWrap.appendChild(dot);
+  });
+  prev.addEventListener('click',function(){goTo(index-1);restart()});
+  next.addEventListener('click',function(){goTo(index+1);restart()});
+  carousel.addEventListener('mouseenter',function(){window.clearInterval(timer)});
+  carousel.addEventListener('mouseleave',restart);
+  goTo(0);
+  restart();
 })();
 </script>
 </body></html>
