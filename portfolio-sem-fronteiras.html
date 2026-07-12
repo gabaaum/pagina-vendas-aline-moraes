@@ -57,7 +57,15 @@
  .vsl,.dark,.final{background:radial-gradient(900px 520px at 50% 0%,rgba(124,149,115,.14),transparent 62%),var(--dark)}
  .photo:before,.about-photo:after{background:linear-gradient(135deg,#7c9573,#39492f)}
  .quote{font:500 24px/1.55 'Be Vietnam Pro',sans-serif;border-radius:16px;background:linear-gradient(135deg,#5f7d50,#3d5136);box-shadow:0 0 55px rgba(124,149,115,.28),0 16px 36px rgba(0,0,0,.35)}
- .letter{font:700 44px 'Be Vietnam Pro',sans-serif;background:linear-gradient(135deg,#cbe4b8,#7c9573);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+ .letter{font:700 44px 'Be Vietnam Pro',sans-serif;background:linear-gradient(135deg,#cbe4b8,#7c9573);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:1}
+ .method-card{position:relative;overflow:hidden;background-size:cover;background-position:center}
+ .method-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,8,.72),rgba(10,14,8,.93));z-index:0}
+ .method-card>*{position:relative;z-index:1}
+ .method-card:nth-child(1){background-image:url(assets/bg/bg-global.jpg)}
+ .method-card:nth-child(2){background-image:url(assets/bg/bg-fed.jpg)}
+ .method-card:nth-child(3){background-image:url(assets/dollar-chart.jpg)}
+ .method-card:nth-child(4){background-image:url(assets/bg/bg-moedas.jpg)}
+ .method-card:nth-child(5){background-image:url(assets/bg/bg-cidade.jpg)}
  .num{font:600 24px 'Be Vietnam Pro',sans-serif;background:linear-gradient(135deg,#6f8f5e,#44593b);box-shadow:0 0 26px rgba(124,149,115,.4)}
  .value{font-family:'Be Vietnam Pro',sans-serif!important;background:linear-gradient(120deg,#cbe4b8,#8fb07e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
  .price{border-radius:22px;background:linear-gradient(180deg,rgba(124,149,115,.16),rgba(233,226,207,.04));border:1px solid rgba(169,191,158,.38);box-shadow:0 0 70px rgba(124,149,115,.2),0 24px 65px rgba(0,0,0,.5)}
