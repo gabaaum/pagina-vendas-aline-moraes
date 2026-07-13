@@ -7,22 +7,23 @@
 <meta name="description" content="Questionário de diagnóstico financeiro para sua conversa com Aline Moraes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
 <style>
   :root { --cream:#F5EFE0; --cream-2:#EDE6D3; --ink:#2A3026; --muted:#5C6155; --green:#5C7350; --sage:#7C9573; --dark:#232A20; --line:#CEC5AE; }
   * { box-sizing: border-box; }
-  body { margin:0; font-family:'Manrope',sans-serif; color:var(--ink); background:var(--cream); }
+  body { margin:0; font-family:Inter,sans-serif; color:var(--ink); background:var(--cream); }
+  h1,h2 { font-family:'Be Vietnam Pro',sans-serif; letter-spacing:-.02em; }
   .top { min-height:310px; padding:68px 24px 92px; color:#F5EFE0; text-align:center; background:linear-gradient(135deg,rgba(35,42,32,.97),rgba(54,66,48,.94)),url('assets/dollar-chart.jpg') center/cover; }
   .eyebrow { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:20px; color:#B7C8AF; font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
   .eyebrow:before,.eyebrow:after { content:''; width:34px; height:1px; background:#7C9573; }
-  h1 { max-width:760px; margin:0 auto 20px; font:600 clamp(42px,7vw,66px)/1.02 'Cormorant Garamond',serif; }
+  h1 { max-width:760px; margin:0 auto 20px; font:600 clamp(42px,7vw,66px)/1.02 'Be Vietnam Pro',sans-serif; }
   .intro { max-width:620px; margin:0 auto; color:#D9DCCF; font-size:16px; line-height:1.75; }
   main { width:min(820px,calc(100% - 32px)); margin:-50px auto 70px; position:relative; }
   form { padding:54px 58px 60px; background:#FBF7ED; border:1px solid rgba(124,149,115,.28); border-radius:12px; box-shadow:0 24px 70px rgba(42,48,38,.14); }
   .field { margin:0 0 34px; }
   label,.legend { display:block; margin-bottom:11px; font-weight:700; font-size:15px; line-height:1.5; color:var(--ink); }
   .required { color:var(--green); }
-  input,textarea { width:100%; border:1px solid var(--line); border-radius:6px; background:#FFFDF7; color:var(--ink); font:500 15px/1.5 'Manrope',sans-serif; padding:15px 16px; outline:none; transition:.2s; }
+  input,textarea { width:100%; border:1px solid var(--line); border-radius:6px; background:#FFFDF7; color:var(--ink); font:500 15px/1.5 Inter,sans-serif; padding:15px 16px; outline:none; transition:.2s; }
   textarea { min-height:120px; resize:vertical; }
   input:focus,textarea:focus { border-color:var(--sage); box-shadow:0 0 0 3px rgba(124,149,115,.13); }
   input::placeholder,textarea::placeholder { color:#9B998D; }
@@ -31,7 +32,7 @@
   .option { display:flex; align-items:flex-start; gap:12px; padding:13px 15px; border:1px solid var(--line); border-radius:6px; background:#FFFDF7; cursor:pointer; transition:.2s; font-size:14px; line-height:1.45; }
   .option:hover { border-color:var(--sage); background:#F7F2E5; }
   .option input { width:17px; height:17px; margin:2px 0 0; accent-color:var(--green); flex:none; }
-  .submit { width:100%; border:0; border-radius:6px; padding:20px 28px; background:var(--green); color:#F5EFE0; font:800 16px 'Manrope',sans-serif; letter-spacing:.08em; cursor:pointer; box-shadow:0 14px 32px rgba(92,115,80,.3); transition:.2s; }
+  .submit { width:100%; border:0; border-radius:6px; padding:20px 28px; background:var(--green); color:#F5EFE0; font:800 16px Inter,sans-serif; letter-spacing:.08em; cursor:pointer; box-shadow:0 14px 32px rgba(92,115,80,.3); transition:.2s; }
   .submit:hover { transform:translateY(-2px); background:#4D6345; }
   .note { margin:18px 0 0; text-align:center; font-size:12px; line-height:1.6; color:#787A70; }
   .signature { text-align:center; font:38px 'Sacramento',cursive; color:var(--sage); margin:30px 0 0; }
@@ -39,7 +40,7 @@
   .success.show { display:grid; }
   .success-card { max-width:520px; padding:52px 40px; text-align:center; border-radius:12px; background:var(--cream); box-shadow:0 30px 80px rgba(0,0,0,.25); }
   .check { width:62px; height:62px; margin:0 auto 22px; display:grid; place-items:center; border-radius:50%; background:var(--green); color:white; font-size:30px; }
-  .success h2 { margin:0 0 12px; font:600 42px/1.05 'Cormorant Garamond',serif; }
+  .success h2 { margin:0 0 12px; font:600 42px/1.05 'Be Vietnam Pro',sans-serif; }
   .success p { margin:0; color:var(--muted); line-height:1.7; }
   @media(max-width:640px){ .top{padding:52px 20px 82px}.intro{font-size:14px}main{margin-top:-38px}form{padding:38px 22px 44px}.field,fieldset{margin-bottom:28px}.success-card{padding:42px 24px} }
 </style>
