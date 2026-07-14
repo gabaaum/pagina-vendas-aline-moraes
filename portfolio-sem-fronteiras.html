@@ -242,6 +242,36 @@ document.documentElement.classList.add('js');
     ctx.fillText(label,p[0],p[1]-26);
     ctx.restore();
   }
+  function currency(lon,lat,symbol,time,dx,dy){
+    var base=project(lon,lat);
+    var float=Math.sin(time*.0022+dx*.04)*8;
+    var x=base[0]+dx;
+    var y=base[1]+dy+float;
+    var pulse=(Math.sin(time*.003)+1)/2;
+    ctx.save();
+    ctx.strokeStyle='rgba(203,228,184,.2)';
+    ctx.lineWidth=1.4;
+    ctx.beginPath();
+    ctx.moveTo(base[0],base[1]);
+    ctx.lineTo(x,y+8);
+    ctx.stroke();
+    ctx.shadowColor='rgba(203,228,184,.75)';
+    ctx.shadowBlur=18+10*pulse;
+    ctx.beginPath();
+    ctx.arc(x,y,24+4*pulse,0,Math.PI*2);
+    ctx.fillStyle='rgba(10,14,8,.58)';
+    ctx.fill();
+    ctx.strokeStyle='rgba(203,228,184,.6)';
+    ctx.lineWidth=1.6;
+    ctx.stroke();
+    ctx.shadowBlur=0;
+    ctx.font='800 '+Math.max(18,width*.022)+'px Inter, sans-serif';
+    ctx.fillStyle='rgba(245,239,224,.95)';
+    ctx.textAlign='center';
+    ctx.textBaseline='middle';
+    ctx.fillText(symbol,x,y+1);
+    ctx.restore();
+  }
   function draw(time){
     if(!width) resize();
     panX=Math.sin(time*.00022)*width*.045;
@@ -280,6 +310,8 @@ document.documentElement.classList.add('js');
     });
     marker(-98,39,'EUA',time);
     marker(10,50,'EUROPA',time+900);
+    currency(-98,39,'US$',time,70,-38);
+    currency(10,50,'€',time+900,-58,-42);
     requestAnimationFrame(draw);
   }
   fetch('assets/map/ne_110m_admin_0_countries.geojson')
