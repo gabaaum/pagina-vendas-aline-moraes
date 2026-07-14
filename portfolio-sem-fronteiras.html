@@ -98,10 +98,10 @@
  /* ===== Mapa global na dobra final ===== */
  .final{position:relative;isolation:isolate;overflow:hidden}
  .final .wrap{position:relative;z-index:2}
- .final:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(620px 360px at 50% 50%,rgba(10,14,8,.22),rgba(10,14,8,.74) 72%,rgba(10,14,8,.92));pointer-events:none}
- .global-map{position:absolute;z-index:0;left:50%;top:49%;width:min(1320px,112vw);aspect-ratio:1.9;transform:translate(-50%,-50%);opacity:.68;pointer-events:none;filter:drop-shadow(0 0 58px rgba(143,176,126,.48))}
+ .final:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(620px 360px at 50% 50%,rgba(10,14,8,.16),rgba(10,14,8,.66) 72%,rgba(10,14,8,.9));pointer-events:none}
+ .global-map{position:absolute;z-index:0;left:50%;top:49%;width:min(1380px,116vw);aspect-ratio:1.9;transform:translate(-50%,-50%);opacity:.82;pointer-events:none;filter:drop-shadow(0 0 70px rgba(143,176,126,.62))}
  .global-map-canvas{display:block;width:100%;height:100%}
- @media(max-width:620px){.final:after{background:radial-gradient(390px 300px at 50% 43%,rgba(10,14,8,.35),rgba(10,14,8,.86) 76%,rgba(10,14,8,.96))}.global-map{width:860px;top:43%;opacity:.45}}
+ @media(max-width:620px){.final:after{background:radial-gradient(390px 300px at 50% 43%,rgba(10,14,8,.26),rgba(10,14,8,.82) 76%,rgba(10,14,8,.95))}.global-map{width:920px;top:43%;opacity:.58}}
 </style>
 </head>
 <body>
@@ -180,7 +180,7 @@ document.documentElement.classList.add('js');
   var ctx=canvas.getContext('2d');
   var countries=[];
   var dpr=Math.min(window.devicePixelRatio||1,2);
-  var width=0,height=0,scale=1,cx=0,cy=0;
+  var width=0,height=0,scale=1,cx=0,cy=0,panX=0;
   var strongEurope={RUS:0,TUR:0};
   function resize(){
     var box=canvas.getBoundingClientRect();
@@ -193,7 +193,7 @@ document.documentElement.classList.add('js');
     cx=width/2;
     cy=height*.5;
   }
-  function project(lon,lat){return [cx+lon*scale,cy-lat*scale]}
+  function project(lon,lat){return [cx+panX+lon*scale,cy-lat*scale]}
   function rings(geometry){
     if(!geometry) return [];
     if(geometry.type==='Polygon') return geometry.coordinates;
@@ -244,11 +244,19 @@ document.documentElement.classList.add('js');
   }
   function draw(time){
     if(!width) resize();
+    panX=Math.sin(time*.00022)*width*.045;
     ctx.clearRect(0,0,width,height);
     var grd=ctx.createRadialGradient(width/2,height/2,20,width/2,height/2,width*.48);
-    grd.addColorStop(0,'rgba(143,176,126,.12)');
+    grd.addColorStop(0,'rgba(143,176,126,.18)');
     grd.addColorStop(1,'rgba(143,176,126,0)');
     ctx.fillStyle=grd;
+    ctx.fillRect(0,0,width,height);
+    var sweepX=((time*.035)%(width*1.45))-width*.22;
+    var sweep=ctx.createLinearGradient(sweepX-width*.18,0,sweepX+width*.18,0);
+    sweep.addColorStop(0,'rgba(143,176,126,0)');
+    sweep.addColorStop(.5,'rgba(203,228,184,.13)');
+    sweep.addColorStop(1,'rgba(143,176,126,0)');
+    ctx.fillStyle=sweep;
     ctx.fillRect(0,0,width,height);
     ctx.strokeStyle='rgba(219,233,209,.08)';
     ctx.lineWidth=1;
@@ -261,11 +269,11 @@ document.documentElement.classList.add('js');
       ctx.beginPath();
       rings(feature.geometry).forEach(drawRing);
       if(isStrong(feature)){
-        ctx.fillStyle=countryCode(feature)==='USA'?'rgba(143,176,126,.68)':'rgba(169,191,158,.5)';
-        ctx.strokeStyle='rgba(219,233,209,.24)';
+        ctx.fillStyle=countryCode(feature)==='USA'?'rgba(143,176,126,.84)':'rgba(169,191,158,.66)';
+        ctx.strokeStyle='rgba(219,233,209,.36)';
       }else{
-        ctx.fillStyle='rgba(92,115,80,.2)';
-        ctx.strokeStyle='rgba(219,233,209,.08)';
+        ctx.fillStyle='rgba(92,115,80,.3)';
+        ctx.strokeStyle='rgba(219,233,209,.12)';
       }
       ctx.fill();
       ctx.stroke();
