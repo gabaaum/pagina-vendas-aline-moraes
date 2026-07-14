@@ -96,18 +96,12 @@
  .check:hover,.card:hover,.method-card:hover,.included div:hover,.fit-box:hover,.faq details:hover,.price:hover{transform:translateY(-5px);border-color:rgba(143,176,126,.6);box-shadow:0 0 34px rgba(124,149,115,.28),0 18px 40px rgba(0,0,0,.45)}
  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;translate:none;transition:none}}
  /* ===== Mapa global na dobra final ===== */
- .final{position:relative;isolation:isolate;overflow:hidden;text-align:left}
+ .final{position:relative;isolation:isolate;overflow:hidden}
  .final .wrap{position:relative;z-index:2}
- .final:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(720px 420px at 32% 50%,rgba(143,176,126,.12),transparent 62%),linear-gradient(90deg,rgba(10,14,8,.35),rgba(10,14,8,.08) 48%,rgba(10,14,8,.52));pointer-events:none}
- .final-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center}
- .final-copy{position:relative;z-index:2}
- .final-copy h2{max-width:620px;margin:0 0 22px;font:700 clamp(40px,5vw,58px)/1.04 'Be Vietnam Pro',sans-serif}
- .final-copy p{max-width:560px;margin:0 0 32px;color:#cbd1c5;line-height:1.7}
- .global-map{position:relative;z-index:2;width:100%;aspect-ratio:1.55;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,rgba(143,176,126,.16),rgba(233,226,207,.035));border:1px solid rgba(203,228,184,.28);box-shadow:inset 0 0 0 1px rgba(245,239,224,.06),0 0 70px rgba(143,176,126,.2),0 28px 70px rgba(0,0,0,.45);opacity:.98;pointer-events:none;filter:drop-shadow(0 0 36px rgba(143,176,126,.32))}
- .global-map:after{content:"";position:absolute;inset:0;background:radial-gradient(420px 210px at 48% 42%,rgba(203,228,184,.08),transparent 68%),linear-gradient(180deg,rgba(245,239,224,.07),transparent 42%,rgba(10,14,8,.22));pointer-events:none}
- .global-map-canvas{position:relative;z-index:1;display:block;width:100%;height:100%}
- @media(max-width:900px){.final{text-align:center}.final-grid{grid-template-columns:1fr;gap:36px}.global-map{order:-1;max-width:720px;margin:0 auto;aspect-ratio:1.55}.final-copy h2,.final-copy p{margin-left:auto;margin-right:auto}}
- @media(max-width:620px){.final{padding:78px 0}.final:after{background:radial-gradient(390px 280px at 50% 24%,rgba(143,176,126,.14),transparent 64%),linear-gradient(180deg,rgba(10,14,8,.08),rgba(10,14,8,.58))}.global-map{aspect-ratio:1.35;min-height:250px;border-radius:22px}.final-copy h2{font-size:36px}}
+ .final:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(620px 360px at 50% 50%,rgba(10,14,8,.16),rgba(10,14,8,.66) 72%,rgba(10,14,8,.9));pointer-events:none}
+ .global-map{position:absolute;z-index:0;left:50%;top:49%;width:min(1380px,116vw);aspect-ratio:1.9;transform:translate(-50%,-50%);opacity:.82;pointer-events:none;filter:drop-shadow(0 0 70px rgba(143,176,126,.62))}
+ .global-map-canvas{display:block;width:100%;height:100%}
+ @media(max-width:620px){.final:after{background:radial-gradient(390px 300px at 50% 43%,rgba(10,14,8,.26),rgba(10,14,8,.82) 76%,rgba(10,14,8,.95))}.global-map{width:920px;top:43%;opacity:.58}}
 </style>
 </head>
 <body>
@@ -124,7 +118,7 @@
 <section class="section"><div class="wrap"><div class="price"><div class="kicker" style="justify-content:center">Investimento</div><h2>Consultoria Portfólio sem Fronteiras</h2><div class="value">R$ 5.997 à vista</div><p>ou em até 6x de R$ 1.025,10</p><ul><li>4 encontros online com Aline</li><li>Diagnóstico, Mapa da Independência Financeira e estratégia</li><li>Orientação para abertura da conta e implementação</li><li>Suporte por WhatsApp durante o processo</li><li>Acesso à recorrência opcional</li></ul><br><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note">Quanto custa adiar essa decisão por mais 12 meses?</p></div></div></section>
 <section class="section sand"><div class="wrap"><div class="section-title"><div class="kicker" style="justify-content:center">Depoimentos</div><h2>Histórias de quem já começou</h2><p>Relatos reais de quem já deu os primeiros passos com mais clareza e direção.</p></div><div class="depo-carousel" aria-label="Carrossel de depoimentos"><button class="depo-nav depo-prev" type="button" aria-label="Depoimento anterior">‹</button><div class="depo-track"><div class="depo-slide"><img src="assets/depoimentos/depoimento-01.jpeg" alt="Depoimento de cliente 01" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-02.jpeg?v=nomerm2" alt="Depoimento de cliente 02" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-03.jpeg" alt="Depoimento de cliente 03" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-04.jpeg" alt="Depoimento de cliente 04" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-05.jpeg?v=nomerm1" alt="Depoimento de cliente 05" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-06.jpeg?v=sem-xtb" alt="Depoimento de cliente 06" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-07.jpeg?v=nomerm1" alt="Depoimento de cliente 07" loading="lazy"></div></div><button class="depo-nav depo-next" type="button" aria-label="Próximo depoimento">›</button></div><div class="depo-dots" aria-label="Navegação dos depoimentos"></div></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><h2>Perguntas frequentes</h2></div><div class="faq"><details><summary>Preciso ter conhecimento prévio sobre o mercado internacional?</summary><p>Não. A consultoria conduz você desde o diagnóstico até a implementação, no seu ritmo.</p></details><details><summary>Preciso de muito dinheiro para investir no exterior?</summary><p>Não. Sua estratégia será desenhada de acordo com a sua realidade e capacidade de aporte.</p></details><details><summary>Como funciona a abertura da conta internacional?</summary><p>Eu oriento todo o processo, da abertura até a transferência dos recursos.</p></details><details><summary>E a tributação internacional?</summary><p>Os princípios fundamentais são abordados de forma prática. Quando houver necessidade contábil específica, indico o profissional adequado.</p></details><details><summary>Em quanto tempo terei a carteira montada?</summary><p>Em média, de 30 a 45 dias, dependendo do seu ritmo e da agenda.</p></details><details><summary>Existe acompanhamento depois dos 4 encontros?</summary><p>Sim. Você pode contratar encontros avulsos para revisão, rebalanceamento ou decisões específicas.</p></details><details><summary>Quem entra em contato depois do agendamento?</summary><p>A própria Aline ou alguém da equipe direta dela.</p></details></div></div></section>
-<section class="final"><div class="wrap final-grid"><div class="global-map" aria-hidden="true"><canvas class="global-map-canvas"></canvas></div><div class="final-copy"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></div></section>
+<section class="final"><div class="global-map" aria-hidden="true"><canvas class="global-map-canvas"></canvas></div><div class="wrap"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></section>
 <script>
 document.documentElement.classList.add('js');
 (function(){
@@ -316,8 +310,8 @@ document.documentElement.classList.add('js');
     });
     marker(-98,39,'EUA',time);
     marker(10,50,'EUROPA',time+900);
-    currency(-98,39,'US$',time,70,-38);
-    currency(10,50,'€',time+900,-58,-42);
+    currency(-98,39,'US$',time,-92,-36);
+    currency(10,50,'€',time+900,92,-42);
     requestAnimationFrame(draw);
   }
   fetch('assets/map/ne_110m_admin_0_countries.geojson')
