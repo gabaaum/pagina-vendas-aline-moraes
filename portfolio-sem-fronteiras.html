@@ -99,16 +99,9 @@
  .final{position:relative;isolation:isolate;overflow:hidden}
  .final .wrap{position:relative;z-index:2}
  .final:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(560px 340px at 50% 48%,rgba(10,14,8,.24),rgba(10,14,8,.72) 72%,rgba(10,14,8,.91));pointer-events:none}
- .world-globe{position:absolute;z-index:0;left:50%;top:50%;width:min(900px,88vw);aspect-ratio:1;transform:translate(-50%,-50%);opacity:.45;pointer-events:none;filter:drop-shadow(0 0 62px rgba(143,176,126,.6))}
- .world-globe svg{display:block;width:100%;height:100%}
- .globe-map{animation:globeDrift 30s linear infinite}
- .globe-land{fill:#a9bf9e;opacity:.78}
- .globe-line{fill:none;stroke:#dbe9d1;stroke-width:2;opacity:.68}
- .globe-outline{fill:url(#globeFill);stroke:#dbe9d1;stroke-width:2.6;opacity:.98}
- .globe-shine{fill:url(#globeShine);opacity:.9}
- @keyframes globeDrift{to{transform:translateX(-360px)}}
+ .world-globe{position:absolute;z-index:0;left:50%;top:50%;width:min(930px,90vw);aspect-ratio:1;transform:translate(-50%,-50%);opacity:.62;pointer-events:none;filter:drop-shadow(0 0 70px rgba(143,176,126,.62))}
+ .world-globe-canvas{display:block;width:100%;height:100%}
  @media(max-width:620px){.final:after{background:radial-gradient(360px 280px at 50% 42%,rgba(10,14,8,.32),rgba(10,14,8,.84) 76%,rgba(10,14,8,.96))}.world-globe{width:620px;top:44%;opacity:.38}}
- @media(prefers-reduced-motion:reduce){.globe-map{animation:none}}
 </style>
 </head>
 <body>
@@ -125,7 +118,7 @@
 <section class="section"><div class="wrap"><div class="price"><div class="kicker" style="justify-content:center">Investimento</div><h2>Consultoria Portfólio sem Fronteiras</h2><div class="value">R$ 5.997 à vista</div><p>ou em até 6x de R$ 1.025,10</p><ul><li>4 encontros online com Aline</li><li>Diagnóstico, Mapa da Independência Financeira e estratégia</li><li>Orientação para abertura da conta e implementação</li><li>Suporte por WhatsApp durante o processo</li><li>Acesso à recorrência opcional</li></ul><br><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note">Quanto custa adiar essa decisão por mais 12 meses?</p></div></div></section>
 <section class="section sand"><div class="wrap"><div class="section-title"><div class="kicker" style="justify-content:center">Depoimentos</div><h2>Histórias de quem já começou</h2><p>Relatos reais de quem já deu os primeiros passos com mais clareza e direção.</p></div><div class="depo-carousel" aria-label="Carrossel de depoimentos"><button class="depo-nav depo-prev" type="button" aria-label="Depoimento anterior">‹</button><div class="depo-track"><div class="depo-slide"><img src="assets/depoimentos/depoimento-01.jpeg" alt="Depoimento de cliente 01" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-02.jpeg?v=nomerm2" alt="Depoimento de cliente 02" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-03.jpeg" alt="Depoimento de cliente 03" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-04.jpeg" alt="Depoimento de cliente 04" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-05.jpeg?v=nomerm1" alt="Depoimento de cliente 05" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-06.jpeg?v=sem-xtb" alt="Depoimento de cliente 06" loading="lazy"></div><div class="depo-slide"><img src="assets/depoimentos/depoimento-07.jpeg?v=nomerm1" alt="Depoimento de cliente 07" loading="lazy"></div></div><button class="depo-nav depo-next" type="button" aria-label="Próximo depoimento">›</button></div><div class="depo-dots" aria-label="Navegação dos depoimentos"></div></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><h2>Perguntas frequentes</h2></div><div class="faq"><details><summary>Preciso ter conhecimento prévio sobre o mercado internacional?</summary><p>Não. A consultoria conduz você desde o diagnóstico até a implementação, no seu ritmo.</p></details><details><summary>Preciso de muito dinheiro para investir no exterior?</summary><p>Não. Sua estratégia será desenhada de acordo com a sua realidade e capacidade de aporte.</p></details><details><summary>Como funciona a abertura da conta internacional?</summary><p>Eu oriento todo o processo, da abertura até a transferência dos recursos.</p></details><details><summary>E a tributação internacional?</summary><p>Os princípios fundamentais são abordados de forma prática. Quando houver necessidade contábil específica, indico o profissional adequado.</p></details><details><summary>Em quanto tempo terei a carteira montada?</summary><p>Em média, de 30 a 45 dias, dependendo do seu ritmo e da agenda.</p></details><details><summary>Existe acompanhamento depois dos 4 encontros?</summary><p>Sim. Você pode contratar encontros avulsos para revisão, rebalanceamento ou decisões específicas.</p></details><details><summary>Quem entra em contato depois do agendamento?</summary><p>A própria Aline ou alguém da equipe direta dela.</p></details></div></div></section>
-<section class="final"><div class="world-globe" aria-hidden="true"><svg viewBox="0 0 500 500" role="img"><defs><radialGradient id="globeFill" cx="34%" cy="26%" r="74%"><stop offset="0%" stop-color="#b7d8a3" stop-opacity=".42"/><stop offset="45%" stop-color="#5c7350" stop-opacity=".18"/><stop offset="100%" stop-color="#0a0e08" stop-opacity=".06"/></radialGradient><radialGradient id="globeShine" cx="30%" cy="22%" r="70%"><stop offset="0%" stop-color="#f5efe0" stop-opacity=".26"/><stop offset="42%" stop-color="#8fb07e" stop-opacity=".08"/><stop offset="100%" stop-color="#8fb07e" stop-opacity="0"/></radialGradient><clipPath id="globeClip"><circle cx="250" cy="250" r="205"/></clipPath></defs><circle class="globe-outline" cx="250" cy="250" r="205"/><g clip-path="url(#globeClip)"><g class="globe-map"><g><path class="globe-land" d="M72 173c17-35 55-54 91-45 18 4 27 17 45 16 16-1 30 8 33 21 4 17-12 28-31 25-20-3-28-16-45-9-15 6-20 23-38 27-25 6-52-8-55-35Zm81 66c18 4 35 17 42 36 9 23-6 41-19 57-11 13-12 32-26 40-16 9-35-14-31-37 3-17 15-26 11-44-5-21 1-47 23-52Zm139-73c16-15 35-20 54-13 17 6 21 20 42 20 24 0 45 16 49 37 4 22-15 39-39 34-21-5-29-20-48-15-17 4-26 21-46 16-25-7-40-28-31-49 4-10 10-18 19-26Zm2 92c24-2 46 9 57 29 13 25 5 62-18 79-20 15-47 7-52-16-5-21 11-36 2-55-7-15-4-28 11-37Zm113 91c27-10 56 3 66 25 8 18-7 35-32 34-27-1-49-17-54-37-2-10 5-17 20-22Z"/></g><g transform="translate(360 0)"><path class="globe-land" d="M72 173c17-35 55-54 91-45 18 4 27 17 45 16 16-1 30 8 33 21 4 17-12 28-31 25-20-3-28-16-45-9-15 6-20 23-38 27-25 6-52-8-55-35Zm81 66c18 4 35 17 42 36 9 23-6 41-19 57-11 13-12 32-26 40-16 9-35-14-31-37 3-17 15-26 11-44-5-21 1-47 23-52Zm139-73c16-15 35-20 54-13 17 6 21 20 42 20 24 0 45 16 49 37 4 22-15 39-39 34-21-5-29-20-48-15-17 4-26 21-46 16-25-7-40-28-31-49 4-10 10-18 19-26Zm2 92c24-2 46 9 57 29 13 25 5 62-18 79-20 15-47 7-52-16-5-21 11-36 2-55-7-15-4-28 11-37Zm113 91c27-10 56 3 66 25 8 18-7 35-32 34-27-1-49-17-54-37-2-10 5-17 20-22Z"/></g><g transform="translate(-360 0)"><path class="globe-land" d="M72 173c17-35 55-54 91-45 18 4 27 17 45 16 16-1 30 8 33 21 4 17-12 28-31 25-20-3-28-16-45-9-15 6-20 23-38 27-25 6-52-8-55-35Zm81 66c18 4 35 17 42 36 9 23-6 41-19 57-11 13-12 32-26 40-16 9-35-14-31-37 3-17 15-26 11-44-5-21 1-47 23-52Zm139-73c16-15 35-20 54-13 17 6 21 20 42 20 24 0 45 16 49 37 4 22-15 39-39 34-21-5-29-20-48-15-17 4-26 21-46 16-25-7-40-28-31-49 4-10 10-18 19-26Zm2 92c24-2 46 9 57 29 13 25 5 62-18 79-20 15-47 7-52-16-5-21 11-36 2-55-7-15-4-28 11-37Zm113 91c27-10 56 3 66 25 8 18-7 35-32 34-27-1-49-17-54-37-2-10 5-17 20-22Z"/></g></g><ellipse class="globe-line" cx="250" cy="250" rx="205" ry="76"/><ellipse class="globe-line" cx="250" cy="250" rx="205" ry="132"/><ellipse class="globe-line" cx="250" cy="250" rx="76" ry="205"/><ellipse class="globe-line" cx="250" cy="250" rx="132" ry="205"/><path class="globe-line" d="M45 250h410M250 45v410"/><path class="globe-line" d="M104 104c83 45 209 45 292 0M104 396c83-45 209-45 292 0"/></g><circle class="globe-shine" cx="250" cy="250" r="205"/></svg></div><div class="wrap"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></section>
+<section class="final"><div class="world-globe" aria-hidden="true"><canvas class="world-globe-canvas"></canvas></div><div class="wrap"><h2>O patrimônio que você construiu importa. A moeda em que ele está construído também.</h2><p>Se faz sentido para o seu momento, o próximo passo é simples: vamos conversar.</p><a class="cta" href="obrigado.html">Quero agendar minha conversa de diagnóstico</a><p class="note" style="color:#aeb5a9">Atendimento individual. Vagas limitadas por mês.</p><p class="signature">Aline Moraes</p></div></section>
 <script>
 document.documentElement.classList.add('js');
 (function(){
@@ -180,6 +173,113 @@ document.documentElement.classList.add('js');
   carousel.addEventListener('mouseleave',restart);
   goTo(0);
   restart();
+})();
+(function(){
+  var canvas=document.querySelector('.world-globe-canvas');
+  if(!canvas || !canvas.getContext) return;
+  var ctx=canvas.getContext('2d');
+  var land=[];
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var size=0;
+  function resize(){
+    var box=canvas.getBoundingClientRect();
+    size=Math.max(320,Math.round(box.width));
+    canvas.width=Math.round(size*dpr);
+    canvas.height=Math.round(size*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function visible(lon,lat,centerLon){
+    var lambda=(lon-centerLon)*Math.PI/180;
+    var phi=lat*Math.PI/180;
+    return Math.cos(phi)*Math.cos(lambda)>0;
+  }
+  function project(lon,lat,centerLon,cx,cy,r){
+    var lambda=(lon-centerLon)*Math.PI/180;
+    var phi=lat*Math.PI/180;
+    return [cx+r*Math.cos(phi)*Math.sin(lambda),cy-r*Math.sin(phi)];
+  }
+  function drawLine(points,centerLon,cx,cy,r){
+    var open=false;
+    points.forEach(function(pt){
+      if(visible(pt[0],pt[1],centerLon)){
+        var p=project(pt[0],pt[1],centerLon,cx,cy,r);
+        if(!open){ctx.moveTo(p[0],p[1]);open=true}else{ctx.lineTo(p[0],p[1])}
+      }else{
+        open=false;
+      }
+    });
+  }
+  function rings(geometry){
+    if(!geometry) return [];
+    if(geometry.type==='Polygon') return geometry.coordinates;
+    if(geometry.type==='MultiPolygon') return geometry.coordinates.reduce(function(a,p){return a.concat(p)},[]);
+    return [];
+  }
+  function draw(time){
+    if(!size) resize();
+    var cx=size/2, cy=size/2, r=size*.43;
+    var centerLon=reduce?-35:((time*.006)%360-180);
+    ctx.clearRect(0,0,size,size);
+    var sphere=ctx.createRadialGradient(cx-r*.35,cy-r*.42,r*.08,cx,cy,r);
+    sphere.addColorStop(0,'rgba(183,216,163,.24)');
+    sphere.addColorStop(.58,'rgba(92,115,80,.12)');
+    sphere.addColorStop(1,'rgba(10,14,8,.1)');
+    ctx.beginPath();
+    ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.fillStyle=sphere;
+    ctx.fill();
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.clip();
+    ctx.lineWidth=Math.max(1,size*.0018);
+    ctx.strokeStyle='rgba(219,233,209,.38)';
+    ctx.beginPath();
+    for(var lon=-150;lon<=180;lon+=30){
+      var meridian=[];
+      for(var lat=-90;lat<=90;lat+=3) meridian.push([lon,lat]);
+      drawLine(meridian,centerLon,cx,cy,r);
+    }
+    for(var latLine=-60;latLine<=60;latLine+=30){
+      var parallel=[];
+      for(var lonLine=-180;lonLine<=180;lonLine+=3) parallel.push([lonLine,latLine]);
+      drawLine(parallel,centerLon,cx,cy,r);
+    }
+    ctx.stroke();
+    ctx.fillStyle='rgba(169,191,158,.82)';
+    ctx.strokeStyle='rgba(219,233,209,.1)';
+    ctx.lineWidth=Math.max(.6,size*.0009);
+    land.forEach(function(feature){
+      rings(feature.geometry).forEach(function(ring){
+        ctx.beginPath();
+        drawLine(ring,centerLon,cx,cy,r);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      });
+    });
+    ctx.restore();
+    ctx.beginPath();
+    ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.strokeStyle='rgba(219,233,209,.68)';
+    ctx.lineWidth=Math.max(2,size*.0032);
+    ctx.stroke();
+    var shine=ctx.createRadialGradient(cx-r*.34,cy-r*.4,0,cx-r*.2,cy-r*.22,r*.9);
+    shine.addColorStop(0,'rgba(245,239,224,.22)');
+    shine.addColorStop(.45,'rgba(143,176,126,.06)');
+    shine.addColorStop(1,'rgba(143,176,126,0)');
+    ctx.beginPath();
+    ctx.arc(cx,cy,r,0,Math.PI*2);
+    ctx.fillStyle=shine;
+    ctx.fill();
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  fetch('assets/map/ne_110m_land.geojson')
+    .then(function(res){return res.json()})
+    .then(function(data){land=data.features||[];resize();draw(0)})
+    .catch(function(){});
+  window.addEventListener('resize',function(){resize();if(reduce) draw(0)});
 })();
 (function(){
   var els=document.querySelectorAll('.check,.card,.method-card,.included>div,.fit-box,.faq details,.price,.depo-carousel');
