@@ -210,6 +210,27 @@ document.documentElement.classList.add('js');
       }
     });
   }
+  function densify(points){
+    var out=[];
+    for(var i=0;i<points.length-1;i++){
+      var a=points[i], b=points[i+1];
+      out.push(a);
+      var lonDiff=b[0]-a[0];
+      if(lonDiff>180) lonDiff-=360;
+      if(lonDiff<-180) lonDiff+=360;
+      var latDiff=b[1]-a[1];
+      var steps=Math.max(1,Math.ceil(Math.max(Math.abs(lonDiff),Math.abs(latDiff))/2.5));
+      for(var s=1;s<steps;s++){
+        var t=s/steps;
+        var lon=a[0]+lonDiff*t;
+        if(lon>180) lon-=360;
+        if(lon<-180) lon+=360;
+        out.push([lon,a[1]+latDiff*t]);
+      }
+    }
+    if(points.length) out.push(points[points.length-1]);
+    return out;
+  }
   function rings(geometry){
     if(!geometry) return [];
     if(geometry.type==='Polygon') return geometry.coordinates;
@@ -219,7 +240,7 @@ document.documentElement.classList.add('js');
   function draw(time){
     if(!size) resize();
     var cx=size/2, cy=size/2, r=size*.43;
-    var centerLon=reduce?-35:((time*.006)%360-180);
+    var centerLon=reduce?-35:(((time*.003)%360)-180);
     ctx.clearRect(0,0,size,size);
     var sphere=ctx.createRadialGradient(cx-r*.35,cy-r*.42,r*.08,cx,cy,r);
     sphere.addColorStop(0,'rgba(183,216,163,.24)');
@@ -277,7 +298,18 @@ document.documentElement.classList.add('js');
   }
   fetch('assets/map/ne_110m_land.geojson')
     .then(function(res){return res.json()})
-    .then(function(data){land=data.features||[];resize();draw(0)})
+    .then(function(data){
+      land=(data.features||[]).map(function(feature){
+        var geometry=feature.geometry;
+        if(geometry && geometry.type==='Polygon'){
+          geometry={type:'Polygon',coordinates:geometry.coordinates.map(densify)};
+        }else if(geometry && geometry.type==='MultiPolygon'){
+          geometry={type:'MultiPolygon',coordinates:geometry.coordinates.map(function(poly){return poly.map(densify)})};
+        }
+        return {geometry:geometry};
+      });
+      resize();draw(0);
+    })
     .catch(function(){});
   window.addEventListener('resize',function(){resize();if(reduce) draw(0)});
 })();
