@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Links | Aline Moraes</title>
+  <meta name="description" content="Links oficiais de Aline Moraes, consultora de investimentos internacionais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0e08;
+      --bg2:#10170d;
+      --card:#182114;
+      --card2:#d0b983;
+      --ink:#f5efe0;
+      --muted:#b9c2ad;
+      --green:#5c7350;
+      --green2:#8fb07e;
+      --border:rgba(245,239,224,.13);
+      --shadow:0 26px 70px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--bg)}
+    body{
+      min-height:100%;
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(680px 360px at 50% -10%,rgba(143,176,126,.24),transparent 62%),
+        radial-gradient(540px 420px at 110% 28%,rgba(208,185,131,.12),transparent 58%),
+        linear-gradient(180deg,#0b1109 0%,#10180e 48%,#0a0e08 100%);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(245,239,224,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(245,239,224,.025) 1px,transparent 1px);
+      background-size:58px 58px;
+      mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 72%);
+      opacity:.85;
+    }
+    a{color:inherit}
+    .page{
+      width:min(100vw,760px);
+      max-width:100vw;
+      margin:0 auto;
+      padding:34px 20px 46px;
+      position:relative;
+      z-index:1;
+    }
+    .profile{
+      text-align:center;
+      padding:10px 0 22px;
+    }
+    .avatar-wrap{
+      width:146px;
+      height:146px;
+      margin:0 auto 24px;
+      border-radius:50%;
+      padding:4px;
+      background:linear-gradient(135deg,#f5efe0,#9dbb8a 50%,#d0b983);
+      box-shadow:0 18px 48px rgba(0,0,0,.38),0 0 0 10px rgba(245,239,224,.04);
+    }
+    .avatar{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 22%;
+      border-radius:50%;
+      border:5px solid #10170d;
+    }
+    h1{
+      margin:0 0 8px;
+      font-family:"Be Vietnam Pro",Inter,sans-serif;
+      font-size:clamp(32px,7vw,46px);
+      line-height:1;
+      letter-spacing:-.055em;
+    }
+    .meta{
+      margin:0 auto 26px;
+      max-width:100%;
+      color:rgba(245,239,224,.64);
+      font-size:15px;
+      line-height:1.55;
+      overflow-wrap:break-word;
+    }
+    .tagline{
+      margin:0 auto;
+      max-width:560px;
+      font-size:clamp(21px,5vw,31px);
+      line-height:1.25;
+      font-weight:600;
+      letter-spacing:-.035em;
+      overflow-wrap:break-word;
+    }
+    .tagline span{
+      color:#d0b983;
+      font-weight:800;
+    }
+    .stack{
+      display:grid;
+      gap:16px;
+      margin-top:34px;
+    }
+    .main-card{
+      position:relative;
+      display:block;
+      text-decoration:none;
+      max-width:100%;
+      min-width:0;
+      padding:34px 30px 30px;
+      border-radius:28px;
+      background:linear-gradient(135deg,#d4bd88,#c1aa75);
+      color:#172012;
+      box-shadow:0 24px 60px rgba(208,185,131,.22),0 18px 50px rgba(0,0,0,.32);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+    .main-card:hover,.link-card:hover{transform:translateY(-3px)}
+    .badge{
+      position:absolute;
+      top:-19px;
+      right:28px;
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:0 20px;
+      border-radius:999px;
+      background:#10170d;
+      border:1px solid rgba(245,239,224,.18);
+      color:#f5efe0;
+      font-family:"Be Vietnam Pro",Inter,sans-serif;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.16em;
+    }
+    .main-card h2,.link-card h2{
+      margin:0 0 10px;
+      font-family:"Be Vietnam Pro",Inter,sans-serif;
+      font-size:clamp(23px,5vw,31px);
+      line-height:1.18;
+      letter-spacing:-.04em;
+      overflow-wrap:break-word;
+    }
+    .main-card p,.link-card p{
+      margin:0;
+      font-size:16px;
+      line-height:1.6;
+      color:rgba(23,32,18,.76);
+      max-width:100%;
+      overflow-wrap:anywhere;
+    }
+    .divider{
+      display:grid;
+      grid-template-columns:minmax(26px,1fr) minmax(0,auto) minmax(26px,1fr);
+      align-items:center;
+      gap:18px;
+      margin:26px 0 4px;
+      color:rgba(245,239,224,.58);
+      font-family:"Be Vietnam Pro",Inter,sans-serif;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    .divider span{
+      min-width:0;
+      max-width:100%;
+      line-height:1.45;
+      overflow-wrap:anywhere;
+    }
+    .divider:before,.divider:after{
+      content:"";
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(245,239,224,.2));
+    }
+    .divider:after{background:linear-gradient(90deg,rgba(245,239,224,.2),transparent)}
+    .link-card{
+      display:block;
+      text-decoration:none;
+      max-width:100%;
+      min-width:0;
+      padding:26px 28px;
+      border-radius:24px;
+      background:rgba(245,239,224,.045);
+      border:1px solid rgba(245,239,224,.14);
+      box-shadow:0 16px 38px rgba(0,0,0,.18);
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .link-card:hover{
+      background:rgba(245,239,224,.07);
+      border-color:rgba(143,176,126,.5);
+    }
+    .link-card h2{
+      font-size:clamp(20px,4.7vw,27px);
+      color:var(--ink);
+    }
+    .link-card p{
+      color:var(--muted);
+      font-size:15px;
+      overflow-wrap:anywhere;
+    }
+    .ebook{
+      background:linear-gradient(135deg,rgba(92,115,80,.22),rgba(245,239,224,.045));
+      border-color:rgba(143,176,126,.34);
+    }
+    .section-label{
+      margin-top:24px;
+      margin-bottom:2px;
+    }
+    .footer{
+      margin-top:30px;
+      text-align:center;
+      color:rgba(245,239,224,.38);
+      font-size:12px;
+    }
+    .arrow{
+      float:right;
+      margin-left:16px;
+      color:#cfe5bf;
+      font-size:24px;
+      line-height:1;
+    }
+    @media(max-width:520px){
+      body{width:100vw;max-width:100vw;overflow-x:hidden}
+      .page{width:min(100%,390px);padding:26px 18px 38px}
+      .avatar-wrap{width:124px;height:124px;margin-bottom:22px}
+      .main-card{padding:32px 22px 25px;border-radius:23px}
+      .badge{position:static;margin:-50px 0 18px auto;width:max-content;max-width:100%;font-size:11px;padding:0 16px;text-align:center}
+      .link-card{padding:22px 22px;border-radius:21px}
+      .divider{grid-template-columns:1fr;gap:8px;font-size:10px;letter-spacing:.13em}
+      .divider:before,.divider:after{width:96px;margin:auto}
+      .arrow{display:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="profile">
+      <div class="avatar-wrap">
+        <img class="avatar" src="../assets/aline-portfolio-hero.jpg" alt="Aline Moraes">
+      </div>
+      <h1>Aline Moraes</h1>
+      <p class="meta">@linemmoraes · Consultora de Investimentos Internacionais</p>
+      <p class="tagline">Construa um <span>portfólio internacional</span></p>
+    </header>
+
+    <section class="stack" aria-label="Links principais">
+      <a class="main-card" href="https://eualinemoraes.com.br/portfolio-sem-fronteiras/">
+        <span class="badge">COMECE POR AQUI</span>
+        <h2>Quero uma estratégia feita pra mim <span class="arrow">→</span></h2>
+        <p>Agende sua análise e descubra como internacionalizar seus investimentos com segurança, mesmo começando do zero.</p>
+      </a>
+
+      <div class="divider"><span>ou dê o primeiro passo por conta própria</span></div>
+
+      <a class="link-card ebook" href="https://pay.hotmart.com/R105053301K?bid=1784156885649&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaATE8ihwZG9mAmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp6bqi_qawLnwrpe3MRCfhKoQBoDkIOIXey6MIsEhvaIW1vPRN_hDJRf8v9ut_aem_jPe6V-S4dCb-WX3OpuTG7g">
+        <h2>Proteja seu Futuro em Moeda Forte <span class="arrow">→</span></h2>
+        <p>O guia prático pra começar a investir em dólar e blindar seu patrimônio das oscilações do real.</p>
+      </a>
+
+      <div class="divider section-label"><span>conheça mais o meu trabalho</span></div>
+
+      <a class="link-card" href="https://youtu.be/i0uA2eJxrdQ?is=fK0wg3RDlfICxPtr">
+        <h2>Me ouça no podcast <span class="arrow">→</span></h2>
+        <p>Tudo sobre começar a lucrar no exterior. Insights exclusivos sobre como iniciar sua jornada para lucrar no exterior.</p>
+      </a>
+
+      <a class="link-card" href="https://www.linkedin.com/in/linemmoraes/">
+        <h2>LinkedIn · Aline Moraes <span class="arrow">→</span></h2>
+        <p>Acompanhe minhas análises sobre cenário econômico e investimentos internacionais.</p>
+      </a>
+    </section>
+
+    <p class="footer">Aline Moraes · Investimentos Internacionais</p>
+  </main>
+</body>
+</html>
