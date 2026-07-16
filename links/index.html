@@ -58,7 +58,7 @@
     }
     .profile{
       text-align:center;
-      padding:10px 0 22px;
+      padding:10px 0 20px;
     }
     .avatar-wrap{
       width:146px;
@@ -86,7 +86,7 @@
       letter-spacing:-.055em;
     }
     .meta{
-      margin:0 auto 26px;
+      margin:0 auto 22px;
       max-width:100%;
       color:rgba(245,239,224,.64);
       font-size:15px;
@@ -102,29 +102,56 @@
       letter-spacing:-.035em;
       overflow-wrap:break-word;
     }
-    .tagline span{
-      color:#d0b983;
-      font-weight:800;
+    .tagline span{color:#d0b983;font-weight:800}
+    .socials{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      margin-top:22px;
     }
-    .stack{
+    .social-icon{
+      width:48px;
+      height:48px;
       display:grid;
-      gap:16px;
-      margin-top:34px;
-    }
-    .main-card{
-      position:relative;
-      display:block;
+      place-items:center;
+      border-radius:18px;
+      color:#f5efe0;
+      background:rgba(245,239,224,.06);
+      border:1px solid rgba(245,239,224,.14);
       text-decoration:none;
+      transition:transform .2s ease,background .2s ease,border-color .2s ease;
+    }
+    .social-icon:hover{transform:translateY(-2px);background:rgba(245,239,224,.1);border-color:rgba(208,185,131,.45)}
+    .social-icon svg{width:27px;height:27px;display:block}
+    .stack{display:grid;gap:16px;margin-top:32px}
+    .main-card,.link-card{
+      position:relative;
+      display:grid;
+      grid-template-columns:76px minmax(0,1fr) 22px;
+      align-items:center;
+      gap:18px;
       max-width:100%;
       min-width:0;
-      padding:34px 30px 30px;
-      border-radius:28px;
+      text-decoration:none;
+      border-radius:26px;
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .main-card:hover,.link-card:hover{transform:translateY(-3px)}
+    .main-card{
+      padding:28px 24px;
       background:linear-gradient(135deg,#d4bd88,#c1aa75);
       color:#172012;
       box-shadow:0 24px 60px rgba(208,185,131,.22),0 18px 50px rgba(0,0,0,.32);
-      transition:transform .2s ease,box-shadow .2s ease;
     }
-    .main-card:hover,.link-card:hover{transform:translateY(-3px)}
+    .link-card{
+      padding:22px 24px;
+      background:rgba(245,239,224,.045);
+      border:1px solid rgba(245,239,224,.14);
+      box-shadow:0 16px 38px rgba(0,0,0,.18);
+    }
+    .link-card:hover{background:rgba(245,239,224,.07);border-color:rgba(143,176,126,.5)}
+    .ebook{background:linear-gradient(135deg,rgba(92,115,80,.22),rgba(245,239,224,.045));border-color:rgba(143,176,126,.34)}
     .badge{
       position:absolute;
       top:-19px;
@@ -142,22 +169,65 @@
       font-weight:800;
       letter-spacing:.16em;
     }
+    .card-thumb{
+      width:76px;
+      height:76px;
+      border-radius:17px;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      background:#0e160c;
+      border:1px solid rgba(245,239,224,.17);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 12px 24px rgba(0,0,0,.18);
+    }
+    .main-card .card-thumb{background:#172012;border-color:rgba(23,32,18,.2)}
+    .thumb-inner{
+      width:100%;
+      height:100%;
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .thumb-strategy{background:linear-gradient(145deg,#172012,#5c7350)}
+    .thumb-strategy svg{width:45px;height:45px;color:#d0b983}
+    .thumb-ebook{background:radial-gradient(circle at 25% 20%,rgba(208,185,131,.45),transparent 26%),linear-gradient(145deg,#1a2416,#44543c)}
+    .ebook-cover{
+      width:39px;height:56px;border-radius:4px;background:linear-gradient(180deg,#1b2118,#0f140d);border:2px solid #d0b983;box-shadow:9px 6px 0 rgba(245,239,224,.18);display:grid;place-items:center;text-align:center;color:#f5efe0;font-size:6px;font-weight:800;line-height:1.15;text-transform:uppercase;padding:4px;
+    }
+    .thumb-podcast{background:linear-gradient(145deg,#10170d,#26341f)}
+    .thumb-podcast:before{content:"";position:absolute;inset:0;background:url('../assets/aline-portfolio-hero.jpg') center 22%/cover;opacity:.52;filter:saturate(.8)}
+    .thumb-podcast .play{position:relative;width:35px;height:35px;border-radius:50%;background:rgba(208,185,131,.92);display:grid;place-items:center;color:#11180e;box-shadow:0 8px 18px rgba(0,0,0,.34)}
+    .thumb-linkedin{background:#0a66c2;color:#fff}
+    .thumb-linkedin svg{width:45px;height:45px}
+    .card-text{min-width:0}
     .main-card h2,.link-card h2{
-      margin:0 0 10px;
+      margin:0 0 7px;
       font-family:"Be Vietnam Pro",Inter,sans-serif;
-      font-size:clamp(23px,5vw,31px);
-      line-height:1.18;
+      line-height:1.16;
       letter-spacing:-.04em;
       overflow-wrap:break-word;
     }
+    .main-card h2{font-size:clamp(22px,4.8vw,30px)}
+    .link-card h2{font-size:clamp(19px,4.3vw,25px);color:var(--ink)}
     .main-card p,.link-card p{
       margin:0;
-      font-size:16px;
-      line-height:1.6;
-      color:rgba(23,32,18,.76);
+      font-size:15px;
+      line-height:1.52;
       max-width:100%;
       overflow-wrap:anywhere;
     }
+    .main-card p{color:rgba(23,32,18,.78)}
+    .link-card p{color:var(--muted)}
+    .card-dots,.arrow{
+      display:grid;
+      place-items:center;
+      width:22px;
+      color:rgba(245,239,224,.66);
+    }
+    .main-card .card-dots{color:rgba(23,32,18,.55)}
+    .card-dots svg{width:19px;height:19px}
     .divider{
       display:grid;
       grid-template-columns:minmax(26px,1fr) minmax(0,auto) minmax(26px,1fr);
@@ -172,74 +242,24 @@
       text-align:center;
       text-transform:uppercase;
     }
-    .divider span{
-      min-width:0;
-      max-width:100%;
-      line-height:1.45;
-      overflow-wrap:anywhere;
-    }
-    .divider:before,.divider:after{
-      content:"";
-      height:1px;
-      background:linear-gradient(90deg,transparent,rgba(245,239,224,.2));
-    }
+    .divider span{min-width:0;max-width:100%;line-height:1.45;overflow-wrap:anywhere}
+    .divider:before,.divider:after{content:"";height:1px;background:linear-gradient(90deg,transparent,rgba(245,239,224,.2))}
     .divider:after{background:linear-gradient(90deg,rgba(245,239,224,.2),transparent)}
-    .link-card{
-      display:block;
-      text-decoration:none;
-      max-width:100%;
-      min-width:0;
-      padding:26px 28px;
-      border-radius:24px;
-      background:rgba(245,239,224,.045);
-      border:1px solid rgba(245,239,224,.14);
-      box-shadow:0 16px 38px rgba(0,0,0,.18);
-      transition:transform .2s ease,border-color .2s ease,background .2s ease;
-    }
-    .link-card:hover{
-      background:rgba(245,239,224,.07);
-      border-color:rgba(143,176,126,.5);
-    }
-    .link-card h2{
-      font-size:clamp(20px,4.7vw,27px);
-      color:var(--ink);
-    }
-    .link-card p{
-      color:var(--muted);
-      font-size:15px;
-      overflow-wrap:anywhere;
-    }
-    .ebook{
-      background:linear-gradient(135deg,rgba(92,115,80,.22),rgba(245,239,224,.045));
-      border-color:rgba(143,176,126,.34);
-    }
-    .section-label{
-      margin-top:24px;
-      margin-bottom:2px;
-    }
-    .footer{
-      margin-top:30px;
-      text-align:center;
-      color:rgba(245,239,224,.38);
-      font-size:12px;
-    }
-    .arrow{
-      float:right;
-      margin-left:16px;
-      color:#cfe5bf;
-      font-size:24px;
-      line-height:1;
-    }
+    .section-label{margin-top:24px;margin-bottom:2px}
+    .footer{margin-top:30px;text-align:center;color:rgba(245,239,224,.38);font-size:12px}
     @media(max-width:520px){
       body{width:100vw;max-width:100vw;overflow-x:hidden}
-      .page{width:min(100%,390px);padding:26px 18px 38px}
-      .avatar-wrap{width:124px;height:124px;margin-bottom:22px}
-      .main-card{padding:32px 22px 25px;border-radius:23px}
-      .badge{position:static;margin:-50px 0 18px auto;width:max-content;max-width:100%;font-size:11px;padding:0 16px;text-align:center}
-      .link-card{padding:22px 22px;border-radius:21px}
+      .page{width:min(100%,430px);padding:26px 18px 38px}
+      .avatar-wrap{width:118px;height:118px;margin-bottom:20px}
+      .social-icon{width:46px;height:46px;border-radius:16px}
+      .main-card,.link-card{grid-template-columns:64px minmax(0,1fr) 18px;gap:13px;border-radius:21px}
+      .main-card{padding:30px 17px 22px}
+      .link-card{padding:16px 16px}
+      .card-thumb{width:64px;height:64px;border-radius:14px}
+      .badge{position:static;grid-column:1 / -1;margin:-48px 0 2px auto;width:max-content;max-width:100%;font-size:10px;padding:0 14px;min-height:34px;text-align:center}
+      .main-card h2{font-size:21px}.link-card h2{font-size:18px}.main-card p,.link-card p{font-size:13.5px;line-height:1.45}
       .divider{grid-template-columns:1fr;gap:8px;font-size:10px;letter-spacing:.13em}
       .divider:before,.divider:after{width:96px;margin:auto}
-      .arrow{display:none}
     }
   </style>
 </head>
@@ -250,34 +270,46 @@
         <img class="avatar" src="../assets/aline-portfolio-hero.jpg" alt="Aline Moraes">
       </div>
       <h1>Aline Moraes</h1>
-      <p class="meta">@linemmoraes · Consultora de Investimentos Internacionais</p>
+      <p class="meta">@eualinemoraes · Consultora de Investimentos Internacionais</p>
       <p class="tagline">Construa um <span>portfólio internacional</span></p>
+      <nav class="socials" aria-label="Redes sociais">
+        <a class="social-icon" href="https://www.instagram.com/eualinemoraes/" aria-label="Instagram de Aline Moraes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+        </a>
+        <a class="social-icon" href="https://eualinemoraes.com.br/portfolio-sem-fronteiras/" aria-label="Falar com Aline Moraes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"></path><path d="M8.8 8.9c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.3 0 .5-.2.7l-.4.5c.6 1 1.5 1.8 2.6 2.3l.5-.6c.2-.2.4-.3.7-.2l1.8.8c.3.1.4.3.4.6v.5c0 .3-.1.5-.4.7-.6.4-1.4.5-2.1.3-3-.8-5.4-3.1-6.2-6.1-.2-.7 0-1.5.3-2.1Z"></path></svg>
+        </a>
+      </nav>
     </header>
 
     <section class="stack" aria-label="Links principais">
       <a class="main-card" href="https://eualinemoraes.com.br/portfolio-sem-fronteiras/">
         <span class="badge">COMECE POR AQUI</span>
-        <h2>Quero uma estratégia feita pra mim <span class="arrow">→</span></h2>
-        <p>Agende sua análise e descubra como internacionalizar seus investimentos com segurança, mesmo começando do zero.</p>
+        <span class="card-thumb thumb-strategy" aria-hidden="true"><span class="thumb-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M7 16l3-4 3 2 5-7"></path><path d="M17 7h2v2"></path></svg></span></span>
+        <span class="card-text"><h2>Quero uma estratégia feita pra mim</h2><p>Agende sua análise e descubra como internacionalizar seus investimentos com segurança, mesmo começando do zero.</p></span>
+        <span class="card-dots" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></span>
       </a>
 
       <div class="divider"><span>ou dê o primeiro passo por conta própria</span></div>
 
       <a class="link-card ebook" href="https://pay.hotmart.com/R105053301K?bid=1784156885649&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaATE8ihwZG9mAmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp6bqi_qawLnwrpe3MRCfhKoQBoDkIOIXey6MIsEhvaIW1vPRN_hDJRf8v9ut_aem_jPe6V-S4dCb-WX3OpuTG7g">
-        <h2>Proteja seu Futuro em Moeda Forte <span class="arrow">→</span></h2>
-        <p>O guia prático pra começar a investir em dólar e blindar seu patrimônio das oscilações do real.</p>
+        <span class="card-thumb thumb-ebook" aria-hidden="true"><span class="ebook-cover">Moeda<br>Forte</span></span>
+        <span class="card-text"><h2>Proteja seu Futuro em Moeda Forte</h2><p>O guia prático pra começar a investir em dólar e blindar seu patrimônio das oscilações do real.</p></span>
+        <span class="card-dots" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></span>
       </a>
 
       <div class="divider section-label"><span>conheça mais o meu trabalho</span></div>
 
       <a class="link-card" href="https://youtu.be/i0uA2eJxrdQ?is=fK0wg3RDlfICxPtr">
-        <h2>Me ouça no podcast <span class="arrow">→</span></h2>
-        <p>Tudo sobre começar a lucrar no exterior. Insights exclusivos sobre como iniciar sua jornada para lucrar no exterior.</p>
+        <span class="card-thumb thumb-podcast" aria-hidden="true"><span class="play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span></span>
+        <span class="card-text"><h2>Me ouça no podcast</h2><p>Tudo sobre começar a lucrar no exterior. Insights exclusivos sobre como iniciar sua jornada para lucrar no exterior.</p></span>
+        <span class="card-dots" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></span>
       </a>
 
       <a class="link-card" href="https://www.linkedin.com/in/linemmoraes/">
-        <h2>LinkedIn · Aline Moraes <span class="arrow">→</span></h2>
-        <p>Acompanhe minhas análises sobre cenário econômico e investimentos internacionais.</p>
+        <span class="card-thumb thumb-linkedin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.98H3.73V20h3.21V8.98ZM5.34 7.48a1.86 1.86 0 1 0 0-3.72 1.86 1.86 0 0 0 0 3.72ZM20.27 20v-5.76c0-3.08-1.64-4.51-3.83-4.51-1.77 0-2.56.97-3 1.65v-1.4h-3.2c.04 1.04 0 10.02 0 10.02h3.2v-5.59c0-.3.02-.6.11-.81.24-.6.78-1.22 1.7-1.22 1.2 0 1.68.92 1.68 2.27V20h3.34Z"></path></svg></span>
+        <span class="card-text"><h2>LinkedIn · Aline Moraes</h2><p>Acompanhe minhas análises sobre cenário econômico e investimentos internacionais.</p></span>
+        <span class="card-dots" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></span>
       </a>
     </section>
 
