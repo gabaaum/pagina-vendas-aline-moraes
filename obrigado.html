@@ -75,21 +75,64 @@
       <div class="field"><label for="autonomia">11. Para tomar a decisão de contratar a consultoria, você tem total autonomia ou precisa alinhar com mais alguém? Quem?<span class="required">*</span></label><textarea id="autonomia" name="Autonomia para contratar" placeholder="Ex: tenho total autonomia / preciso falar com meu cônjuge" required></textarea></div>
       <div class="field"><label for="instagram">12. Qual seu @ do Instagram? <span style="font-weight:500;color:#777">(não obrigatório)</span></label><input id="instagram" name="Instagram" placeholder="@seuperfil"></div>
       <button class="submit" type="submit">ENVIAR</button>
-      <p class="note">Ao enviar, suas respostas serão organizadas em uma mensagem e o WhatsApp será aberto para concluir o envio.</p>
+      <p class="note">Ao enviar, suas respostas serão registradas com segurança para a análise da Aline antes da conversa de diagnóstico.</p>
       <p class="signature">Aline Moraes</p>
     </form>
   </main>
-  <div class="success" id="success" role="dialog" aria-modal="true" aria-labelledby="success-title"><div class="success-card"><div class="check">✓</div><h2 id="success-title">Resposta recebida</h2><p>Estou te redirecionando para o WhatsApp...</p></div></div>
+  <div class="success" id="success" role="dialog" aria-modal="true" aria-labelledby="success-title"><div class="success-card"><div class="check">✓</div><h2 id="success-title">Resposta recebida</h2><p>Suas respostas foram enviadas. A Aline vai analisar antes da conversa de diagnóstico.</p></div></div>
 <script>
   (function(){
-    var form=document.getElementById('diagnostico'), success=document.getElementById('success');
+    var SHEETY_URL='https://api.sheety.co/35f7dca5d0a749d89507e33c6442aedc/question%C3%A1rioDiagn%C3%B3sticoFinanceiro/p%C3%A1gina1';
+    var form=document.getElementById('diagnostico'), success=document.getElementById('success'), button=form.querySelector('.submit');
+
     form.addEventListener('submit',function(e){
       e.preventDefault();
       if(!form.reportValidity()) return;
-      var data=new FormData(form), lines=['*Questionário de Diagnóstico Financeiro*',''];
-      data.forEach(function(value,key){ if(String(value).trim()) lines.push('*'+key+'*',String(value).trim(),''); });
-      success.classList.add('show');
-      setTimeout(function(){ window.location.href='https://wa.me/?text='+encodeURIComponent(lines.join('\n')); },1300);
+      var data=new FormData(form), answers={};
+
+      data.forEach(function(value,key){
+        answers[key]=String(value).trim();
+      });
+
+      var payload={};
+
+      payload['página1']={
+          dataHora:new Date().toISOString(),
+          nome:answers['Nome']||'',
+          email:answers['Email']||'',
+          telefoneWhatsapp:answers['Telefone / WhatsApp']||'',
+          profissaoFormaAtuacao:answers['Profissão e forma de atuação']||'',
+          maiorInquietacao:answers['Maior inquietação']||'',
+          momentoAtual:answers['Momento atual']||'',
+          patrimonioAproximado:answers['Patrimônio aproximado']||'',
+          rendaMensalLiquida:answers['Renda mensal líquida']||'',
+          investimentosNoExterior:answers['Investimentos no exterior']||'',
+          objetivoEm12Meses:answers['Objetivo em 12 meses']||'',
+          autonomiaParaContratar:answers['Autonomia para contratar']||'',
+          instagram:answers['Instagram']||'',
+          pagina:window.location.href,
+          origem:'Página de obrigado - diagnóstico financeiro'
+      };
+
+      button.disabled=true;
+      button.textContent='ENVIANDO...';
+
+      fetch(SHEETY_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      }).then(function(response){
+        if(!response.ok) throw new Error('Erro ao enviar formulário');
+        return response.json();
+      }).then(function(){
+        success.classList.add('show');
+        form.reset();
+      }).catch(function(){
+        alert('Não foi possível enviar suas respostas agora. Por favor, tente novamente em instantes.');
+      }).finally(function(){
+        button.disabled=false;
+        button.textContent='ENVIAR';
+      });
     });
   })();
 </script>
