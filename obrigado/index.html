@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionário de Diagnóstico Financeiro — Aline Moraes</title>
+<meta name="description" content="Questionário de diagnóstico financeiro para sua conversa com Aline Moraes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#F5EFE0; --cream-2:#EDE6D3; --ink:#2A3026; --muted:#5C6155; --green:#5C7350; --sage:#7C9573; --dark:#232A20; --line:#CEC5AE; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:Inter,sans-serif; color:var(--ink); background:var(--cream); }
+  h1,h2 { font-family:'Be Vietnam Pro',sans-serif; letter-spacing:-.02em; }
+  .top { min-height:310px; padding:68px 24px 92px; color:#F5EFE0; text-align:center; background:linear-gradient(135deg,rgba(35,42,32,.97),rgba(54,66,48,.94)),url('assets/dollar-chart.jpg') center/cover; }
+  .eyebrow { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:20px; color:#B7C8AF; font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
+  .eyebrow:before,.eyebrow:after { content:''; width:34px; height:1px; background:#7C9573; }
+  h1 { max-width:760px; margin:0 auto 20px; font:600 clamp(42px,7vw,66px)/1.02 'Be Vietnam Pro',sans-serif; }
+  .intro { max-width:620px; margin:0 auto; color:#D9DCCF; font-size:16px; line-height:1.75; }
+  main { width:min(820px,calc(100% - 32px)); margin:-50px auto 70px; position:relative; }
+  form { padding:54px 58px 60px; background:#FBF7ED; border:1px solid rgba(124,149,115,.28); border-radius:12px; box-shadow:0 24px 70px rgba(42,48,38,.14); }
+  .field { margin:0 0 34px; }
+  label,.legend { display:block; margin-bottom:11px; font-weight:700; font-size:15px; line-height:1.5; color:var(--ink); }
+  .required { color:var(--green); }
+  input,textarea { width:100%; border:1px solid var(--line); border-radius:6px; background:#FFFDF7; color:var(--ink); font:500 15px/1.5 Inter,sans-serif; padding:15px 16px; outline:none; transition:.2s; }
+  textarea { min-height:120px; resize:vertical; }
+  input:focus,textarea:focus { border-color:var(--sage); box-shadow:0 0 0 3px rgba(124,149,115,.13); }
+  input::placeholder,textarea::placeholder { color:#9B998D; }
+  fieldset { margin:0 0 34px; padding:0; border:0; }
+  .options { display:grid; gap:10px; }
+  .option { display:flex; align-items:flex-start; gap:12px; padding:13px 15px; border:1px solid var(--line); border-radius:6px; background:#FFFDF7; cursor:pointer; transition:.2s; font-size:14px; line-height:1.45; }
+  .option:hover { border-color:var(--sage); background:#F7F2E5; }
+  .option input { width:17px; height:17px; margin:2px 0 0; accent-color:var(--green); flex:none; }
+  .submit { width:100%; border:0; border-radius:6px; padding:20px 28px; background:var(--green); color:#F5EFE0; font:800 16px Inter,sans-serif; letter-spacing:.08em; cursor:pointer; box-shadow:0 14px 32px rgba(92,115,80,.3); transition:.2s; }
+  .submit:hover { transform:translateY(-2px); background:#4D6345; }
+  .note { margin:18px 0 0; text-align:center; font-size:12px; line-height:1.6; color:#787A70; }
+  .signature { text-align:center; font:38px 'Sacramento',cursive; color:var(--sage); margin:30px 0 0; }
+  .success { position:fixed; inset:0; z-index:20; display:none; place-items:center; padding:24px; background:rgba(35,42,32,.94); }
+  .success.show { display:grid; }
+  .success-card { max-width:520px; padding:52px 40px; text-align:center; border-radius:12px; background:var(--cream); box-shadow:0 30px 80px rgba(0,0,0,.25); }
+  .check { width:62px; height:62px; margin:0 auto 22px; display:grid; place-items:center; border-radius:50%; background:var(--green); color:white; font-size:30px; }
+  .success h2 { margin:0 0 12px; font:600 42px/1.05 'Be Vietnam Pro',sans-serif; }
+  .success p { margin:0; color:var(--muted); line-height:1.7; }
+  @media(max-width:640px){ .top{padding:52px 20px 82px}.intro{font-size:14px}main{margin-top:-38px}form{padding:38px 22px 44px}.field,fieldset{margin-bottom:28px}.success-card{padding:42px 24px} }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="eyebrow">Diagnóstico personalizado</div>
+    <h1>Questionário de Diagnóstico Financeiro</h1>
+    <p class="intro">Preencha com cuidado. Essas respostas chegam direto pra mim antes da nossa conversa de diagnóstico.</p>
+  </header>
+  <main>
+    <form id="diagnostico">
+      <div class="field"><label for="nome">1. Nome<span class="required">*</span></label><input id="nome" name="Nome" autocomplete="name" placeholder="Seu nome completo" required></div>
+      <div class="field"><label for="email">2. Email<span class="required">*</span></label><input id="email" name="Email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required></div>
+      <div class="field"><label for="telefone">3. Telefone / WhatsApp (com DDD)<span class="required">*</span></label><input id="telefone" name="Telefone / WhatsApp" type="tel" autocomplete="tel" placeholder="(00) 00000-0000 ou +código internacional" required></div>
+      <div class="field"><label for="profissao">4. Especifique sua profissão e forma de atuação<span class="required">*</span></label><input id="profissao" name="Profissão e forma de atuação" placeholder="Ex: médica autônoma, empresária, executiva CLT, sócia de empresa..." required></div>
+      <div class="field"><label for="inquietacao">5. Hoje, qual é a sua maior inquietação em relação ao seu patrimônio?<span class="required">*</span></label><textarea id="inquietacao" name="Maior inquietação" placeholder="Conte com suas palavras..." required></textarea></div>
+      <fieldset><legend class="legend">6. Qual dessas situações representa melhor o seu momento atual?<span class="required">*</span></legend><div class="options">
+        <label class="option"><input type="radio" name="Momento atual" value="Já invisto fora do Brasil, mas sem uma estratégia clara de alocação" required><span>Já invisto fora do Brasil, mas sem uma estratégia clara de alocação</span></label>
+        <label class="option"><input type="radio" name="Momento atual" value="Tenho conta aberta em corretora internacional, mas nunca movimentei"><span>Tenho conta aberta em corretora internacional, mas nunca movimentei</span></label>
+        <label class="option"><input type="radio" name="Momento atual" value="Ainda não tenho conta no exterior e não sei por onde começar"><span>Ainda não tenho conta no exterior e não sei por onde começar</span></label>
+        <label class="option"><input type="radio" name="Momento atual" value="Já estudei bastante sozinho(a), mas travo na hora de decidir e implementar"><span>Já estudei bastante sozinho(a), mas travo na hora de decidir e implementar</span></label>
+      </div></fieldset>
+      <fieldset><legend class="legend">7. Qual o seu patrimônio total aproximado hoje (Brasil + exterior)?<span class="required">*</span></legend><div class="options">
+        <label class="option"><input type="radio" name="Patrimônio aproximado" value="Até R$ 300 mil" required><span>Até R$ 300 mil</span></label><label class="option"><input type="radio" name="Patrimônio aproximado" value="De R$ 300 mil a R$ 1 milhão"><span>De R$ 300 mil a R$ 1 milhão</span></label><label class="option"><input type="radio" name="Patrimônio aproximado" value="De R$ 1 milhão a R$ 3 milhões"><span>De R$ 1 milhão a R$ 3 milhões</span></label><label class="option"><input type="radio" name="Patrimônio aproximado" value="Acima de R$ 3 milhões"><span>Acima de R$ 3 milhões</span></label>
+      </div></fieldset>
+      <fieldset><legend class="legend">8. Qual a sua faixa de renda mensal líquida?<span class="required">*</span></legend><div class="options">
+        <label class="option"><input type="radio" name="Renda mensal líquida" value="Até R$ 15 mil" required><span>Até R$ 15 mil</span></label><label class="option"><input type="radio" name="Renda mensal líquida" value="De R$ 15 mil a R$ 30 mil"><span>De R$ 15 mil a R$ 30 mil</span></label><label class="option"><input type="radio" name="Renda mensal líquida" value="De R$ 30 mil a R$ 50 mil"><span>De R$ 30 mil a R$ 50 mil</span></label><label class="option"><input type="radio" name="Renda mensal líquida" value="Acima de R$ 50 mil"><span>Acima de R$ 50 mil</span></label>
+      </div></fieldset>
+      <div class="field"><label for="exterior">9. Você já possui investimentos no exterior? Se sim, quais e em qual corretora? <span style="font-weight:500;color:#777">(não obrigatório)</span></label><textarea id="exterior" name="Investimentos no exterior" placeholder="Ex: tenho conta na Avenue com alguns ETFs, ou ainda não abri conta nenhuma"></textarea></div>
+      <div class="field"><label for="objetivo">10. Qual objetivo você precisa alcançar com sua carteira internacional nos próximos 12 meses para saber que valeu a pena essa jornada?<span class="required">*</span></label><textarea id="objetivo" name="Objetivo em 12 meses" placeholder="Descreva seu objetivo..." required></textarea></div>
+      <div class="field"><label for="autonomia">11. Para tomar a decisão de contratar a consultoria, você tem total autonomia ou precisa alinhar com mais alguém? Quem?<span class="required">*</span></label><textarea id="autonomia" name="Autonomia para contratar" placeholder="Ex: tenho total autonomia / preciso falar com meu cônjuge" required></textarea></div>
+      <div class="field"><label for="instagram">12. Qual seu @ do Instagram? <span style="font-weight:500;color:#777">(não obrigatório)</span></label><input id="instagram" name="Instagram" placeholder="@seuperfil"></div>
+      <button class="submit" type="submit">ENVIAR</button>
+      <p class="note">Ao enviar, suas respostas serão registradas com segurança para a análise da Aline antes da conversa de diagnóstico.</p>
+      <p class="signature">Aline Moraes</p>
+    </form>
+  </main>
+  <div class="success" id="success" role="dialog" aria-modal="true" aria-labelledby="success-title"><div class="success-card"><div class="check">✓</div><h2 id="success-title">Resposta recebida</h2><p>Suas respostas foram enviadas. A Aline vai analisar antes da conversa de diagnóstico.</p></div></div>
+<script>
+  (function(){
+    var SHEETY_URL='https://api.sheety.co/35f7dca5d0a749d89507e33c6442aedc/question%C3%A1rioDiagn%C3%B3sticoFinanceiro/p%C3%A1gina1';
+    var form=document.getElementById('diagnostico'), success=document.getElementById('success'), button=form.querySelector('.submit');
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!form.reportValidity()) return;
+      var data=new FormData(form), answers={};
+
+      data.forEach(function(value,key){
+        answers[key]=String(value).trim();
+      });
+
+      var payload={};
+
+      payload['página1']={
+          dataHora:new Date().toISOString(),
+          nome:answers['Nome']||'',
+          email:answers['Email']||'',
+          telefoneWhatsapp:answers['Telefone / WhatsApp']||'',
+          profissaoFormaAtuacao:answers['Profissão e forma de atuação']||'',
+          maiorInquietacao:answers['Maior inquietação']||'',
+          momentoAtual:answers['Momento atual']||'',
+          patrimonioAproximado:answers['Patrimônio aproximado']||'',
+          rendaMensalLiquida:answers['Renda mensal líquida']||'',
+          investimentosNoExterior:answers['Investimentos no exterior']||'',
+          objetivoEm12Meses:answers['Objetivo em 12 meses']||'',
+          autonomiaParaContratar:answers['Autonomia para contratar']||'',
+          instagram:answers['Instagram']||'',
+          pagina:window.location.href,
+          origem:'Página de obrigado - diagnóstico financeiro'
+      };
+
+      button.disabled=true;
+      button.textContent='ENVIANDO...';
+
+      fetch(SHEETY_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      }).then(function(response){
+        if(!response.ok) throw new Error('Erro ao enviar formulário');
+        return response.json();
+      }).then(function(){
+        success.classList.add('show');
+        form.reset();
+      }).catch(function(){
+        alert('Não foi possível enviar suas respostas agora. Por favor, tente novamente em instantes.');
+      }).finally(function(){
+        button.disabled=false;
+        button.textContent='ENVIAR';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
