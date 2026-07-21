@@ -48,6 +48,18 @@
   [style*="border"], details { border-color: var(--dm-border) !important; }
   details { background: rgba(233,226,207,.05) !important; border-color: var(--dm-border) !important; }
   .hero-photo img, img[alt="Aline Moraes"] { box-shadow: 0 24px 60px rgba(0,0,0,.55) !important; }
+  .ebook-hero { position: relative !important; overflow: hidden !important; background: #0e130b !important; isolation: isolate; }
+  .ebook-hero .hero-grid, .ebook-hero > div:not(.hero-slides) { position: relative; z-index: 2; }
+  .hero-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; filter: grayscale(1) sepia(1) hue-rotate(68deg) saturate(1.15) brightness(.45); animation: heroFade 30s infinite; will-change: opacity; }
+  .hero-slide:nth-child(1) { animation-delay: 0s; }
+  .hero-slide:nth-child(2) { animation-delay: 6s; }
+  .hero-slide:nth-child(3) { animation-delay: 12s; }
+  .hero-slide:nth-child(4) { animation-delay: 18s; }
+  .hero-slide:nth-child(5) { animation-delay: 24s; }
+  .hero-slides:after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,8,.50) 0%, rgba(14,19,11,.70) 52%, rgba(14,19,11,.96) 100%); }
+  @keyframes heroFade { 0% { opacity: 0; } 5% { opacity: 1; } 20% { opacity: 1; } 28% { opacity: 0; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .hero-slide { animation: none; } .hero-slide:first-child { opacity: 1; } }
 
 </style>
 </head>
@@ -55,7 +67,14 @@
 <div>
 
   <!-- ===== HERO ===== -->
-  <section style="position: relative; background: #F5EFE0; padding: 40px 24px 0;">
+  <section class="ebook-hero" style="position: relative; background: #F5EFE0; padding: 40px 24px 0;">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide" style="background-image:url(assets/bg/bg-global.jpg)"></div>
+      <div class="hero-slide" style="background-image:url(assets/bg/bg-moedas.jpg)"></div>
+      <div class="hero-slide" style="background-image:url(assets/bg/bg-dolar.jpg)"></div>
+      <div class="hero-slide" style="background-image:url(assets/bg/bg-fed.jpg)"></div>
+      <div class="hero-slide" style="background-image:url(assets/bg/bg-cidade.jpg)"></div>
+    </div>
     <div class="hero-grid" style="max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; padding: 40px 0 20px;">
       <div class="hero-text">
         <div style="display: inline-flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #647E5B; font-weight: 700; margin-bottom: 26px;">
