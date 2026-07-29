@@ -35,9 +35,9 @@
     .cta:hover { transform:translateY(-2px); box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 20px 44px rgba(92,115,80,.46); }
     .hero { position:relative; min-height:764px; display:flex; align-items:stretch; overflow:hidden; isolation:isolate; background:#0d120a; }
     .hero::before { content:""; position:absolute; inset:0; z-index:-3; background:radial-gradient(circle at 10% 0,rgba(143,176,126,.12),transparent 32%),linear-gradient(135deg,#10170d,#090d07 68%); }
-    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#0b1008 0%,rgba(11,16,8,.98) 42%,rgba(11,16,8,.88) 51%,rgba(11,16,8,.2) 69%,rgba(11,16,8,.08) 100%),linear-gradient(180deg,transparent 82%,rgba(9,13,7,.3)); }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(11,16,8,.8) 0%,rgba(11,16,8,.86) 42%,rgba(11,16,8,.76) 51%,rgba(11,16,8,.18) 69%,rgba(11,16,8,.08) 100%),linear-gradient(180deg,transparent 82%,rgba(9,13,7,.3)); }
     .hero-person { position:absolute; z-index:-2; top:0; right:0; width:56%; height:100%; object-fit:cover; object-position:center 43%; filter:contrast(1.04) brightness(.72); }
-    .hero-money { position:absolute; z-index:-2; inset:0 auto 0 0; width:68%; height:100%; object-fit:cover; object-position:left center; opacity:.3; mix-blend-mode:screen; filter:grayscale(1) sepia(1) hue-rotate(55deg) brightness(.82); }
+    .hero-money { position:absolute; z-index:-3; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.42; mix-blend-mode:screen; filter:grayscale(1) sepia(1) hue-rotate(55deg) brightness(.78) contrast(1.08); }
     .hero .wrap { display:flex; align-items:flex-start; }
     .hero-grid { width:100%; display:grid; grid-template-columns:622px 1fr; align-items:start; }
     .hero-copy { padding:20px 10px 22px; }
@@ -142,7 +142,7 @@
       .hero .wrap { width:100%; display:block; }
       .hero-grid { display:flex; flex-direction:column; }
       .hero-person { position:relative; order:0; z-index:-2; width:100%; height:350px; object-position:center 37%; opacity:1; filter:contrast(1.04) brightness(.72); }
-      .hero-money { display:none; }
+      .hero-money { display:block; position:absolute; inset:0; width:100%; height:100%; object-position:center top; opacity:.22; }
       .hero::after { background:linear-gradient(180deg,rgba(11,16,8,.04) 0%,rgba(11,16,8,.35) 32%,#0b1008 49%,#0b1008 100%); }
       .hero-copy { order:1; width:100%; margin-top:-92px; padding:0 20px 34px; text-align:left; }
       .hero-badge { margin-bottom:14px; font-size:11px; }
@@ -168,7 +168,7 @@
   <main>
     <section class="hero">
       <img class="hero-person" src="assets/aline.jpg" alt="Aline Moraes">
-      <img class="hero-money" src="assets/bg/bg-global.jpg" alt="" aria-hidden="true">
+      <img class="hero-money" src="assets/bg/bg-moedas.jpg" alt="" aria-hidden="true">
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
