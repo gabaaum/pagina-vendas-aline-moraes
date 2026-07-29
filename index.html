@@ -36,7 +36,7 @@
     .hero { position:relative; min-height:764px; display:flex; align-items:stretch; overflow:hidden; isolation:isolate; background:#0d120a; }
     .hero::before { content:""; position:absolute; inset:0; z-index:-3; background:radial-gradient(circle at 10% 0,rgba(143,176,126,.12),transparent 32%),linear-gradient(135deg,#10170d,#090d07 68%); }
     .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(11,16,8,.8) 0%,rgba(11,16,8,.86) 42%,rgba(11,16,8,.76) 51%,rgba(11,16,8,.18) 69%,rgba(11,16,8,.08) 100%),linear-gradient(180deg,transparent 82%,rgba(9,13,7,.3)); }
-    .hero-person { position:absolute; z-index:-2; top:0; right:0; width:56%; height:100%; object-fit:cover; object-position:center 43%; filter:contrast(1.04) brightness(.72); }
+    .hero-person { position:absolute; z-index:-2; right:2%; bottom:-2%; width:42%; height:91%; object-fit:contain; object-position:right bottom; opacity:.9; filter:contrast(1.08) brightness(.68); -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 14%,#000 100%); -webkit-mask-composite:source-in; mask-image:linear-gradient(90deg,transparent 0%,#000 16%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 14%,#000 100%); mask-composite:intersect; }
     .hero-money { position:absolute; z-index:-3; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.42; mix-blend-mode:screen; filter:grayscale(1) sepia(1) hue-rotate(55deg) brightness(.78) contrast(1.08); }
     .hero .wrap { display:flex; align-items:flex-start; }
     .hero-grid { width:100%; display:grid; grid-template-columns:622px 1fr; align-items:start; }
@@ -127,7 +127,7 @@
       .section { padding:74px 0; }
       .hero-grid,.pain-grid,.about-grid,.offer-grid { grid-template-columns:1fr; }
       .hero { min-height:760px; }
-      .hero-person { width:62%; opacity:.84; object-position:55% 43%; }
+      .hero-person { right:-2%; width:48%; height:88%; opacity:.9; }
       .hero::after { background:linear-gradient(90deg,#0b1008 0%,rgba(11,16,8,.97) 48%,rgba(11,16,8,.78) 67%,rgba(11,16,8,.2) 100%); }
       .hero-copy { width:min(610px,70%); padding-top:24px; }
       .risk-card { min-height:420px; }
@@ -141,7 +141,7 @@
       .hero { display:block; min-height:auto; padding:0; background:#0b1008; }
       .hero .wrap { width:100%; display:block; }
       .hero-grid { display:flex; flex-direction:column; }
-      .hero-person { position:relative; order:0; z-index:-2; width:100%; height:350px; object-position:center 37%; opacity:1; filter:contrast(1.04) brightness(.72); }
+      .hero-person { position:relative; right:auto; bottom:auto; order:0; z-index:-2; width:100%; height:350px; object-position:center bottom; opacity:1; filter:contrast(1.04) brightness(.72); -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%); mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%); }
       .hero-money { display:block; position:absolute; inset:0; width:100%; height:100%; object-position:center top; opacity:.22; }
       .hero::after { background:linear-gradient(180deg,rgba(11,16,8,.04) 0%,rgba(11,16,8,.35) 32%,#0b1008 49%,#0b1008 100%); }
       .hero-copy { order:1; width:100%; margin-top:-92px; padding:0 20px 34px; text-align:left; }
