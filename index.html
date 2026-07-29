@@ -23,7 +23,7 @@
     h1,h2,h3,p { margin-top:0; }
     h1,h2,h3 { color:var(--ink); font-family:"Be Vietnam Pro",sans-serif; letter-spacing:-.035em; }
     p { line-height:1.75; }
-    .wrap { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+    .wrap { width:min(1140px,calc(100% - 40px)); margin-inline:auto; }
     .section { padding:96px 0; }
     .section.alt { background:var(--surface-2); }
     .eyebrow { display:flex; align-items:center; gap:10px; color:#b4c8a9; font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
@@ -33,26 +33,21 @@
     .section-head p { max-width:680px; margin:0 auto; color:var(--muted); font-size:17px; }
     .cta { display:inline-flex; justify-content:center; align-items:center; min-height:60px; padding:18px 30px; border-radius:7px; background:linear-gradient(135deg,#7ba167,#4f6a45); color:var(--ink); font-weight:800; font-size:15px; line-height:1.35; text-align:center; box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 15px 38px rgba(92,115,80,.36); transition:.2s ease; }
     .cta:hover { transform:translateY(-2px); box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 20px 44px rgba(92,115,80,.46); }
-    .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:54px 0 46px; overflow:hidden; isolation:isolate; }
-    .hero::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(9,13,7,.98) 0%,rgba(9,13,7,.91) 43%,rgba(9,13,7,.34) 75%,rgba(9,13,7,.6) 100%),url("assets/dollar-chart.jpg") center/cover; z-index:-2; filter:saturate(.55); }
-    .hero::after { content:""; position:absolute; inset:0; background:radial-gradient(circle at 76% 22%,rgba(143,176,126,.22),transparent 30%),linear-gradient(180deg,transparent 74%,var(--bg)); z-index:-1; }
-    .hero-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:62px; align-items:center; }
-    .hero-copy { padding:28px 0; }
-    .hero h1 { margin:22px 0; font-size:clamp(46px,6vw,75px); line-height:.99; background:linear-gradient(115deg,#f5efe0 35%,#c6deb8 76%,#86a778); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-    .hero-lead { max-width:650px; margin-bottom:14px; color:#eef0e7; font-size:20px; font-weight:700; line-height:1.48; }
-    .hero-sub { max-width:620px; margin-bottom:25px; color:#bfc6b6; font-size:16px; }
-    .benefits { display:grid; gap:11px; margin:0 0 28px; padding:0; list-style:none; }
-    .benefits li { display:flex; gap:11px; align-items:flex-start; color:#dce1d4; font-size:14px; line-height:1.5; }
-    .benefits li::before { content:"✓"; flex:none; display:grid; place-items:center; width:21px; height:21px; margin-top:1px; border-radius:4px; background:var(--green); color:var(--ink); font-size:13px; font-weight:800; }
-    .micro { margin:12px 0 0; color:#8f9989; font-size:12px; }
-    .hero-photo { position:relative; max-width:460px; margin-left:auto; }
-    .hero-photo::before { content:""; position:absolute; inset:24px -20px -20px 24px; border-radius:10px; background:var(--sage); opacity:.85; }
-    .hero-photo img { position:relative; z-index:1; display:block; width:100%; border-radius:10px; filter:grayscale(1); box-shadow:var(--shadow); }
-    .quick-win { margin-top:42px; display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); border-radius:10px; background:rgba(23,29,18,.88); backdrop-filter:blur(12px); overflow:hidden; }
-    .quick-win div { padding:18px 20px; }
-    .quick-win div+div { border-left:1px solid var(--border); }
-    .quick-win b { display:block; color:var(--ink); font-size:14px; margin-bottom:4px; }
-    .quick-win span { color:var(--muted); font-size:12px; line-height:1.5; }
+    .hero { position:relative; min-height:764px; display:flex; align-items:stretch; overflow:hidden; isolation:isolate; background:#0d120a; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-3; background:radial-gradient(circle at 10% 0,rgba(143,176,126,.12),transparent 32%),linear-gradient(135deg,#10170d,#090d07 68%); }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#0b1008 0%,rgba(11,16,8,.98) 42%,rgba(11,16,8,.88) 51%,rgba(11,16,8,.2) 69%,rgba(11,16,8,.08) 100%),linear-gradient(180deg,transparent 82%,rgba(9,13,7,.3)); }
+    .hero-person { position:absolute; z-index:-2; top:0; right:0; width:56%; height:100%; object-fit:cover; object-position:center 31%; filter:saturate(.72) contrast(1.02) brightness(.83); }
+    .hero-money { position:absolute; z-index:-2; inset:0 auto 0 0; width:61%; height:100%; object-fit:cover; opacity:.1; mix-blend-mode:screen; filter:grayscale(1) sepia(1) hue-rotate(55deg); }
+    .hero .wrap { display:flex; align-items:flex-start; }
+    .hero-grid { width:100%; display:grid; grid-template-columns:622px 1fr; align-items:start; }
+    .hero-copy { padding:20px 10px 22px; }
+    .hero-badge { display:inline-block; margin-bottom:18px; padding:8px 11px; background:rgba(143,176,126,.18); border:1px solid rgba(183,216,163,.18); color:#c7dabd; font-size:13px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; }
+    .hero h1 { max-width:602px; margin:0 0 15px; font-size:45px; line-height:1; background:linear-gradient(115deg,#f5efe0 28%,#c6deb8 72%,#91b181); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-lead { max-width:602px; margin-bottom:20px; color:#eef0e7; font-size:18px; font-weight:700; line-height:1.45; }
+    .hero .cta { min-width:377px; min-height:58px; margin-bottom:20px; border-radius:3px; }
+    .benefits { display:grid; gap:10px; max-width:602px; margin:0; padding:0; list-style:none; }
+    .benefits li { display:flex; gap:12px; align-items:flex-start; color:#dce1d4; font-size:15px; line-height:1.5; }
+    .benefits li::before { content:"✓"; flex:none; display:grid; place-items:center; width:22px; height:22px; margin-top:1px; border-radius:3px; background:#66764e; color:var(--ink); font-size:14px; font-weight:800; }
     .pain-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:54px; align-items:center; }
     .pain h2 { font-size:clamp(34px,4.5vw,50px); line-height:1.08; margin:14px 0 24px; }
     .pain p { color:var(--muted); font-size:16px; }
@@ -130,14 +125,11 @@
     .mobile-cta { display:none; }
     @media (max-width:900px) {
       .section { padding:74px 0; }
-      .hero { padding-top:28px; }
       .hero-grid,.pain-grid,.about-grid,.offer-grid { grid-template-columns:1fr; }
-      .hero-photo { order:-1; width:min(72vw,380px); margin:0 auto; }
-      .hero-copy { padding:8px 0; text-align:center; }
-      .eyebrow { justify-content:center; }
-      .hero-lead,.hero-sub { margin-left:auto; margin-right:auto; }
-      .benefits { max-width:620px; margin-left:auto; margin-right:auto; text-align:left; }
-      .quick-win { margin-top:25px; }
+      .hero { min-height:760px; }
+      .hero-person { width:62%; opacity:.78; object-position:55% 30%; }
+      .hero::after { background:linear-gradient(90deg,#0b1008 0%,rgba(11,16,8,.97) 48%,rgba(11,16,8,.78) 67%,rgba(11,16,8,.2) 100%); }
+      .hero-copy { width:min(610px,70%); padding-top:24px; }
       .risk-card { min-height:420px; }
       .cards { grid-template-columns:1fr 1fr; }
       .about-photo { width:min(78vw,430px); margin:auto; }
@@ -145,15 +137,19 @@
       .price-card { width:min(100%,480px); margin:auto; }
     }
     @media (max-width:620px) {
-      .wrap { width:min(100% - 28px,1120px); }
-      .hero { min-height:auto; padding-bottom:28px; }
-      .hero-photo { width:75vw; }
-      .hero h1 { font-size:39px; }
-      .hero-lead { font-size:17px; }
-      .hero-sub { font-size:14px; }
-      .hero .cta { width:100%; }
-      .quick-win { grid-template-columns:1fr; }
-      .quick-win div+div { border-left:0; border-top:1px solid var(--border); }
+      .wrap { width:min(100% - 28px,1140px); }
+      .hero { display:block; min-height:auto; padding:0; background:#0b1008; }
+      .hero .wrap { width:100%; display:block; }
+      .hero-grid { display:flex; flex-direction:column; }
+      .hero-person { position:relative; order:0; z-index:-2; width:100%; height:350px; object-position:center 23%; opacity:1; filter:saturate(.72) contrast(1.02) brightness(.82); }
+      .hero-money { display:none; }
+      .hero::after { background:linear-gradient(180deg,rgba(11,16,8,.04) 0%,rgba(11,16,8,.35) 32%,#0b1008 49%,#0b1008 100%); }
+      .hero-copy { order:1; width:100%; margin-top:-92px; padding:0 20px 34px; text-align:left; }
+      .hero-badge { margin-bottom:14px; font-size:11px; }
+      .hero h1 { font-size:31px; line-height:1.04; }
+      .hero-lead { font-size:16px; }
+      .hero .cta { width:100%; min-width:0; }
+      .benefits li { font-size:14px; }
       .cards,.content-grid,.deliverables,.fit-grid,.authority { grid-template-columns:1fr; }
       .section-head { margin-bottom:34px; }
       .section-head h2 { font-size:32px; }
@@ -163,37 +159,30 @@
       .guarantee { grid-template-columns:1fr; justify-items:center; text-align:center; }
       .price-card { padding:34px 20px; }
       .final { padding:84px 0 110px; }
-      .mobile-cta { position:fixed; z-index:50; left:10px; right:10px; bottom:10px; display:block; padding:15px 18px; border-radius:8px; background:linear-gradient(135deg,#7ba167,#4f6a45); color:var(--ink); text-align:center; font-size:13px; font-weight:800; box-shadow:0 12px 35px rgba(0,0,0,.55); }
+      .mobile-cta { position:fixed; z-index:50; left:10px; right:10px; bottom:10px; display:block; padding:15px 18px; border-radius:8px; background:linear-gradient(135deg,#7ba167,#4f6a45); color:var(--ink); text-align:center; font-size:13px; font-weight:800; box-shadow:0 12px 35px rgba(0,0,0,.55); opacity:0; transform:translateY(16px); pointer-events:none; transition:.25s ease; }
+      .mobile-cta.visible { opacity:1; transform:none; pointer-events:auto; }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="hero">
+      <img class="hero-person" src="assets/aline-portfolio-hero.jpg" alt="Aline Moraes">
+      <img class="hero-money" src="assets/dollar-chart.jpg" alt="" aria-hidden="true">
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow">Guia estratégico para diversificação internacional</div>
-            <h1>Proteja seu futuro em moeda forte</h1>
-            <p class="hero-lead">Construa patrimônio em moeda forte, mesmo que você nunca tenha investido um centavo fora do Brasil.</p>
-            <p class="hero-sub">Uma masterclass direta para entender ETFs, dar os primeiros passos no mercado internacional e deixar de concentrar 100% do seu futuro em uma única economia.</p>
+            <div class="hero-badge">Proteja seu futuro em moeda forte</div>
+            <h1>Descubra como proteger seu patrimônio em moeda forte — mesmo que você nunca tenha investido fora do Brasil.</h1>
+            <p class="hero-lead">Com esta masterclass, você conquista clareza e autonomia para dar os primeiros passos no mercado internacional.</p>
+            <a class="cta" href="#oferta">QUERO ACESSAR A MASTERCLASS</a>
             <ul class="benefits">
               <li>Comece do zero, sem precisar dominar o mercado financeiro.</li>
               <li>Entenda o que realmente importa antes de investir fora do Brasil.</li>
               <li>Estruture sua primeira carteira internacional com clareza.</li>
-              <li>Tenha a masterclass e o ebook para consultar durante 1 ano.</li>
+              <li>Conte com a masterclass e o ebook para consultar durante 1 ano.</li>
             </ul>
-            <a class="cta" href="#oferta">QUERO PROTEGER MEU FUTURO EM MOEDA FORTE</a>
-            <p class="micro">Acesso imediato · Compra segura · 7 dias de garantia</p>
           </div>
-          <div class="hero-photo">
-            <img src="assets/aline.jpg" alt="Aline Moraes">
-          </div>
-        </div>
-        <div class="quick-win">
-          <div><b>Clareza para começar</b><span>Um caminho organizado, sem excesso de informação.</span></div>
-          <div><b>Aplicação prática</b><span>Conceitos traduzidos em decisões possíveis para sua realidade.</span></div>
-          <div><b>Visão de longo prazo</b><span>Uma base para construir patrimônio além do real.</span></div>
         </div>
       </div>
     </section>
@@ -375,5 +364,14 @@
   </main>
   <footer><div class="wrap">© Aline Moraes · Conteúdo educacional. Rentabilidade passada não garante resultados futuros.</div></footer>
   <a class="mobile-cta" href="#oferta">QUERO ACESSAR A MASTERCLASS</a>
+  <script>
+    const hero = document.querySelector('.hero');
+    const mobileCta = document.querySelector('.mobile-cta');
+    if (hero && mobileCta && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        mobileCta.classList.toggle('visible', !entry.isIntersecting);
+      }, { threshold: 0.08 }).observe(hero);
+    }
+  </script>
 </body>
 </html>
