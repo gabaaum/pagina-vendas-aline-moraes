@@ -16,7 +16,7 @@
       --shadow:0 24px 70px rgba(0,0,0,.42);
     }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:Manrope,sans-serif; overflow-x:hidden; }
     a { color:inherit; text-decoration:none; }
     img { max-width:100%; }
@@ -123,6 +123,75 @@
     .final p { max-width:620px; margin:0 auto 30px; color:#bbc3b5; }
     footer { padding:24px 0; border-top:1px solid var(--border); background:var(--dark); color:#778071; text-align:center; font-size:11px; }
     .mobile-cta { display:none; }
+    .card,.lesson,.deliverable,.fit-box,.authority div,.price-card,.risk-card,.about-photo,.seal,details {
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 18px 44px rgba(0,0,0,.24), inset 0 1px 0 rgba(245,239,224,.04);
+      transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease, background .35s ease;
+    }
+    .card::before,.lesson::before,.deliverable::before,.fit-box::before,.authority div::before,.price-card::before,details::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(135deg,rgba(245,239,224,.1),transparent 34%),
+        radial-gradient(circle at 18% 0,rgba(154,188,137,.18),transparent 42%);
+      opacity:.74;
+    }
+    .card > *,.lesson > *,.deliverable > *,.fit-box > *,.authority div > *,.price-card > *,details > * { position:relative; z-index:1; }
+    .card {
+      border-color:rgba(154,188,137,.22);
+      background:linear-gradient(150deg,rgba(34,43,27,.98),rgba(18,24,14,.98));
+    }
+    .card .icon,.lesson span {
+      box-shadow:0 0 0 1px rgba(245,239,224,.1),0 12px 28px rgba(92,115,80,.26);
+    }
+    .lesson {
+      border-color:rgba(154,188,137,.18);
+      background:linear-gradient(145deg,rgba(233,226,207,.075),rgba(23,29,18,.82));
+    }
+    .deliverable,.fit-box {
+      border-color:rgba(154,188,137,.24);
+      background:linear-gradient(150deg,rgba(35,45,28,.92),rgba(16,22,12,.96));
+    }
+    .fit-box.no {
+      border-color:rgba(183,143,128,.2);
+      background:linear-gradient(150deg,rgba(33,28,23,.78),rgba(16,22,12,.96));
+    }
+    .authority div {
+      border-color:rgba(154,188,137,.2);
+      background:linear-gradient(145deg,rgba(233,226,207,.075),rgba(23,29,18,.9));
+    }
+    details {
+      border-color:rgba(154,188,137,.18);
+      background:linear-gradient(145deg,rgba(233,226,207,.055),rgba(23,29,18,.96));
+    }
+    .card:hover,.lesson:hover,.deliverable:hover,.fit-box:hover,.authority div:hover,details:hover {
+      transform:translateY(-4px);
+      border-color:rgba(154,188,137,.38);
+      box-shadow:0 24px 58px rgba(0,0,0,.34),0 0 34px rgba(124,149,115,.12), inset 0 1px 0 rgba(245,239,224,.08);
+    }
+    .price-card {
+      border-color:rgba(154,188,137,.46);
+      box-shadow:0 28px 78px rgba(0,0,0,.48),0 0 54px rgba(124,149,115,.16);
+    }
+    .about-photo { overflow:visible; }
+    .reveal-item {
+      opacity:0;
+      transform:translate3d(var(--reveal-x,0),28px,0);
+      transition:opacity .72s ease,transform .72s cubic-bezier(.2,.72,.18,1),box-shadow .35s ease,border-color .35s ease,background .35s ease;
+      transition-delay:var(--reveal-delay,0ms);
+      will-change:opacity,transform;
+    }
+    .reveal-left { --reveal-x:-54px; }
+    .reveal-right { --reveal-x:54px; }
+    .reveal-item.is-visible { opacity:1; transform:translate3d(0,0,0); }
+    .reveal-item.is-visible.card:hover,.reveal-item.is-visible.lesson:hover,.reveal-item.is-visible.deliverable:hover,.reveal-item.is-visible.fit-box:hover,.authority div.reveal-item.is-visible:hover,details.reveal-item.is-visible:hover { transform:translateY(-4px); }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal-item { opacity:1; transform:none; transition:none; }
+      .card:hover,.lesson:hover,.deliverable:hover,.fit-box:hover,.authority div:hover,details:hover { transform:none; }
+    }
     @media (max-width:900px) {
       .section { padding:74px 0; }
       .hero-grid,.pain-grid,.about-grid,.offer-grid { grid-template-columns:1fr; }
@@ -138,6 +207,8 @@
     }
     @media (max-width:620px) {
       .wrap { width:min(100% - 28px,1140px); }
+      .reveal-left { --reveal-x:-18px; }
+      .reveal-right { --reveal-x:18px; }
       .hero { display:block; min-height:auto; padding:0; background:#0b1008; }
       .hero .wrap { width:100%; display:block; }
       .hero-grid { display:flex; flex-direction:column; }
@@ -371,6 +442,25 @@
       new IntersectionObserver(([entry]) => {
         mobileCta.classList.toggle('visible', !entry.isIntersecting);
       }, { threshold: 0.08 }).observe(hero);
+    }
+    const revealItems = document.querySelectorAll('.card,.lesson,.deliverable,.fit-box,.authority div,.price-card,.risk-card,.about-photo,.seal,details');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal-item', index % 2 === 0 ? 'reveal-left' : 'reveal-right');
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+    });
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+      revealItems.forEach((item) => revealObserver.observe(item));
     }
   </script>
 </body>
