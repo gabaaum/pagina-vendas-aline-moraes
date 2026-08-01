@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proteja seu futuro em moeda forte Aline Moraes</title>
+  <meta name="description" content="Masterclass para construir patrimônio em moeda forte e dar os primeiros passos no mercado internacional, mesmo começando do zero.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0e130b; --dark:#090d07; --surface:#171d12; --surface-2:#12180e;
+      --ink:#f5efe0; --text:#d7d9ce; --muted:#a8b09c; --green:#5c7350;
+      --bright:#9abc89; --sage:#7c9573; --border:rgba(233,226,207,.14);
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Manrope,sans-serif; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { color:var(--ink); font-family:"Be Vietnam Pro",sans-serif; letter-spacing:-.035em; }
+    p { line-height:1.75; }
+    .wrap { width:min(1140px,calc(100% - 40px)); margin-inline:auto; }
+    .section { padding:96px 0; }
+    .section.alt { background:var(--surface-2); }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:#b4c8a9; font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:34px; height:1px; background:currentColor; }
+    .section-head { max-width:800px; margin:0 auto 48px; text-align:center; }
+    .section-head h2 { margin:14px 0 18px; font-size:clamp(34px,4.7vw,52px); line-height:1.08; }
+    .section-head p { max-width:680px; margin:0 auto; color:var(--muted); font-size:17px; }
+    .cta { display:inline-flex; justify-content:center; align-items:center; min-height:60px; padding:18px 30px; border-radius:7px; background:linear-gradient(135deg,#7ba167,#4f6a45); color:var(--ink); font-weight:800; font-size:15px; line-height:1.35; text-align:center; box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 15px 38px rgba(92,115,80,.36); transition:.2s ease; }
+    .cta:hover { transform:translateY(-2px); box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 20px 44px rgba(92,115,80,.46); }
+    .hero { position:relative; min-height:764px; display:flex; align-items:stretch; overflow:hidden; isolation:isolate; background:#0d120a; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-3; background:radial-gradient(circle at 10% 0,rgba(143,176,126,.12),transparent 32%),linear-gradient(135deg,#10170d,#090d07 68%); }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(11,16,8,.8) 0%,rgba(11,16,8,.86) 42%,rgba(11,16,8,.76) 51%,rgba(11,16,8,.18) 69%,rgba(11,16,8,.08) 100%),linear-gradient(180deg,transparent 82%,rgba(9,13,7,.3)); }
+    .hero-person { position:absolute; z-index:-2; right:4%; bottom:0; width:38%; height:88%; object-fit:contain; object-position:right bottom; opacity:.98; filter:contrast(1.04) brightness(1.08) saturate(.98) drop-shadow(0 26px 52px rgba(0,0,0,.48)); }
+    .hero-money { position:absolute; z-index:-3; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.42; mix-blend-mode:screen; filter:grayscale(1) sepia(1) hue-rotate(55deg) brightness(.78) contrast(1.08); }
+    .hero .wrap { display:flex; align-items:flex-start; }
+    .hero-grid { width:100%; display:grid; grid-template-columns:622px 1fr; align-items:start; }
+    .hero-copy { padding:20px 10px 22px; }
+    .hero-badge { display:inline-block; margin-bottom:18px; padding:8px 11px; background:rgba(143,176,126,.18); border:1px solid rgba(183,216,163,.18); color:#c7dabd; font-size:13px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; }
+    .hero h1 { max-width:602px; margin:0 0 15px; font-size:45px; line-height:1; background:linear-gradient(115deg,#f5efe0 28%,#c6deb8 72%,#91b181); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-lead { max-width:602px; margin-bottom:20px; color:#eef0e7; font-size:18px; font-weight:700; line-height:1.45; }
+    .hero .cta { min-width:377px; min-height:58px; margin-bottom:20px; border-radius:3px; }
+    .benefits { display:grid; gap:10px; max-width:602px; margin:0; padding:0; list-style:none; }
+    .benefits li { display:flex; gap:12px; align-items:flex-start; color:#dce1d4; font-size:15px; line-height:1.5; }
+    .benefits li::before { content:"✓"; flex:none; display:grid; place-items:center; width:22px; height:22px; margin-top:1px; border-radius:3px; background:#66764e; color:var(--ink); font-size:14px; font-weight:800; }
+    .pain-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:54px; align-items:center; }
+    .pain h2 { font-size:clamp(34px,4.5vw,50px); line-height:1.08; margin:14px 0 24px; }
+    .pain p { color:var(--muted); font-size:16px; }
+    .quote { margin:30px 0 0; padding:20px 24px; border-left:3px solid var(--sage); background:rgba(124,149,115,.08); color:#dce6d5; font:600 21px/1.5 "Be Vietnam Pro",sans-serif; }
+    .risk-card { position:relative; min-height:520px; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); background:url("assets/wall-st.jpg") center/cover; }
+    .risk-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(9,13,7,.1),rgba(9,13,7,.93)); }
+    .risk-card div { position:absolute; z-index:1; left:28px; right:28px; bottom:28px; }
+    .risk-card strong { display:block; color:var(--ink); font-size:24px; line-height:1.25; }
+    .risk-card span { color:#b8c0b1; font-size:14px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { padding:27px; border:1px solid var(--border); border-radius:10px; background:var(--surface); }
+    .card .icon { display:grid; place-items:center; width:42px; height:42px; margin-bottom:18px; border-radius:9px; background:rgba(143,176,126,.14); color:var(--bright); font-size:20px; }
+    .card h3 { margin:0 0 10px; font-size:19px; line-height:1.25; letter-spacing:-.02em; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+    .content-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .lesson { display:flex; gap:14px; padding:20px; border:1px solid var(--border); border-radius:9px; background:rgba(233,226,207,.04); }
+    .lesson span { flex:none; display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--green); color:var(--ink); font-weight:800; }
+    .lesson p { margin:2px 0 0; color:#c7cec0; font-size:14px; line-height:1.6; }
+    .deliverables { margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .deliverable { padding:30px; border-radius:11px; background:linear-gradient(145deg,rgba(124,149,115,.17),rgba(23,29,18,.95)); border:1px solid rgba(143,176,126,.25); }
+    .deliverable small { color:var(--bright); font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .deliverable h3 { margin:10px 0; font-size:23px; }
+    .deliverable p { margin:0; color:var(--muted); font-size:14px; }
+    .center-cta { margin-top:38px; text-align:center; }
+    .fit-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:920px; margin:auto; }
+    .fit-box { padding:30px; border-radius:10px; border:1px solid var(--border); background:var(--surface); }
+    .fit-box h3 { margin:0 0 18px; font-size:24px; }
+    .fit-box ul { display:grid; gap:13px; margin:0; padding:0; list-style:none; }
+    .fit-box li { display:flex; gap:10px; color:var(--muted); font-size:14px; line-height:1.55; }
+    .fit-box.yes li::before { content:"✓"; color:var(--bright); font-weight:800; }
+    .fit-box.no li::before { content:"×"; color:#b78f80; font-weight:800; }
+    .about-grid { display:grid; grid-template-columns:.78fr 1.22fr; gap:58px; align-items:center; }
+    .about-photo { position:relative; }
+    .about-photo::after { content:""; position:absolute; inset:18px -16px -16px 18px; border-radius:10px; background:var(--sage); }
+    .about-photo img { position:relative; z-index:1; display:block; width:100%; border-radius:10px; box-shadow:var(--shadow); }
+    .signature { margin:0 0 2px; color:var(--bright); font:40px Sacramento,cursive; }
+    .about h2 { margin:0 0 20px; font-size:clamp(34px,4.5vw,48px); line-height:1.08; }
+    .about p { color:var(--muted); font-size:15px; }
+    .authority { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:26px 0 30px; }
+    .authority div { padding:16px; border-radius:8px; background:rgba(233,226,207,.05); border:1px solid var(--border); }
+    .authority b { display:block; color:var(--ink); font-size:20px; }
+    .authority span { color:var(--muted); font-size:11px; line-height:1.4; }
+    .offer-grid { display:grid; grid-template-columns:1fr 440px; gap:52px; align-items:center; }
+    .offer-copy h2 { margin:14px 0 22px; font-size:clamp(36px,4.8vw,52px); line-height:1.08; }
+    .offer-copy p { color:var(--muted); }
+    .stack { margin:24px 0 0; border-top:1px solid var(--border); }
+    .stack div { display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--border); color:#cad0c3; font-size:14px; }
+    .stack b { color:var(--ink); }
+    .price-card { padding:40px 34px; border:1px solid rgba(143,176,126,.34); border-radius:14px; background:radial-gradient(circle at 50% 0,rgba(143,176,126,.14),transparent 45%),var(--surface); box-shadow:var(--shadow); text-align:center; }
+    .price-card .tag { display:inline-block; margin-bottom:20px; padding:7px 14px; border-radius:50px; background:rgba(143,176,126,.14); color:#bdd6af; font-size:11px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .price-card .from { margin:0; color:#7f897a; font-size:15px; text-decoration:line-through; }
+    .price-card .price { margin:5px 0 8px; color:var(--ink); font:800 clamp(46px,6vw,64px)/1 "Be Vietnam Pro",sans-serif; letter-spacing:-.06em; }
+    .price-card .installments { margin:0 0 26px; color:var(--muted); font-size:14px; }
+    .price-card .cta { width:100%; }
+    .safe { margin:14px 0 0; color:#879180; font-size:11px; line-height:1.6; }
+    .guarantee { display:grid; grid-template-columns:170px 1fr; gap:42px; align-items:center; max-width:850px; margin:auto; }
+    .seal { display:grid; place-items:center; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle at 50% 38%,#819a76,#4f6546); border:3px solid rgba(245,239,224,.3); outline:1px solid var(--sage); box-shadow:0 20px 50px rgba(92,115,80,.32); text-align:center; }
+    .seal b { display:block; color:var(--ink); font-size:48px; line-height:1; }
+    .seal span { color:var(--ink); font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .guarantee h2 { margin:0 0 15px; font-size:38px; }
+    .guarantee p { color:var(--muted); }
+    .faq { max-width:800px; margin:auto; }
+    details { margin-bottom:11px; padding:4px 22px; border:1px solid var(--border); border-radius:9px; background:var(--surface); }
+    summary { display:flex; justify-content:space-between; gap:18px; padding:19px 0; cursor:pointer; color:var(--ink); font-weight:700; list-style:none; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; flex:none; color:var(--bright); font-size:22px; font-weight:400; transition:.2s; }
+    details[open] summary::after { transform:rotate(45deg); }
+    details p { margin:0 0 20px; color:var(--muted); font-size:14px; }
+    .final { position:relative; padding:112px 0; overflow:hidden; text-align:center; background:var(--dark); isolation:isolate; }
+    .final::before { content:""; position:absolute; inset:0; z-index:-2; background:url("assets/dollar-bill.jpg") center/cover; opacity:.16; filter:grayscale(1) sepia(1) hue-rotate(60deg); }
+    .final::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(rgba(9,13,7,.72),rgba(9,13,7,.94)); }
+    .final h2 { max-width:800px; margin:0 auto 20px; font-size:clamp(40px,6vw,62px); line-height:1.04; }
+    .final p { max-width:620px; margin:0 auto 30px; color:#bbc3b5; }
+    footer { padding:24px 0; border-top:1px solid var(--border); background:var(--dark); color:#778071; text-align:center; font-size:11px; }
+    .mobile-cta { display:none; }
+    .card,.lesson,.deliverable,.fit-box,.authority div,.price-card,.risk-card,.about-photo,.seal,details {
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 18px 44px rgba(0,0,0,.24), inset 0 1px 0 rgba(245,239,224,.04);
+      transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease, background .35s ease;
+    }
+    .card::before,.lesson::before,.deliverable::before,.fit-box::before,.authority div::before,.price-card::before,details::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(135deg,rgba(245,239,224,.1),transparent 34%),
+        radial-gradient(circle at 18% 0,rgba(154,188,137,.18),transparent 42%);
+      opacity:.74;
+    }
+    .card > *,.lesson > *,.deliverable > *,.fit-box > *,.authority div > *,.price-card > *,details > * { position:relative; z-index:1; }
+    .card {
+      border-color:rgba(154,188,137,.22);
+      background:linear-gradient(150deg,rgba(34,43,27,.98),rgba(18,24,14,.98));
+    }
+    .card .icon,.lesson span {
+      box-shadow:0 0 0 1px rgba(245,239,224,.1),0 12px 28px rgba(92,115,80,.26);
+    }
+    .lesson {
+      border-color:rgba(154,188,137,.18);
+      background:linear-gradient(145deg,rgba(233,226,207,.075),rgba(23,29,18,.82));
+    }
+    .deliverable,.fit-box {
+      border-color:rgba(154,188,137,.24);
+      background:linear-gradient(150deg,rgba(35,45,28,.92),rgba(16,22,12,.96));
+    }
+    .fit-box.no {
+      border-color:rgba(183,143,128,.2);
+      background:linear-gradient(150deg,rgba(33,28,23,.78),rgba(16,22,12,.96));
+    }
+    .authority div {
+      border-color:rgba(154,188,137,.2);
+      background:linear-gradient(145deg,rgba(233,226,207,.075),rgba(23,29,18,.9));
+    }
+    details {
+      border-color:rgba(154,188,137,.18);
+      background:linear-gradient(145deg,rgba(233,226,207,.055),rgba(23,29,18,.96));
+    }
+    .card:hover,.lesson:hover,.deliverable:hover,.fit-box:hover,.authority div:hover,details:hover {
+      transform:translateY(-4px);
+      border-color:rgba(154,188,137,.38);
+      box-shadow:0 24px 58px rgba(0,0,0,.34),0 0 34px rgba(124,149,115,.12), inset 0 1px 0 rgba(245,239,224,.08);
+    }
+    .price-card {
+      border-color:rgba(154,188,137,.46);
+      box-shadow:0 28px 78px rgba(0,0,0,.48),0 0 54px rgba(124,149,115,.16);
+    }
+    .about-photo { overflow:visible; }
+    .reveal-item {
+      opacity:0;
+      transform:translate3d(var(--reveal-x,0),28px,0);
+      transition:opacity .72s ease,transform .72s cubic-bezier(.2,.72,.18,1),box-shadow .35s ease,border-color .35s ease,background .35s ease;
+      transition-delay:var(--reveal-delay,0ms);
+      will-change:opacity,transform;
+    }
+    .reveal-left { --reveal-x:-54px; }
+    .reveal-right { --reveal-x:54px; }
+    .reveal-item.is-visible { opacity:1; transform:translate3d(0,0,0); }
+    .reveal-item.is-visible.card:hover,.reveal-item.is-visible.lesson:hover,.reveal-item.is-visible.deliverable:hover,.reveal-item.is-visible.fit-box:hover,.authority div.reveal-item.is-visible:hover,details.reveal-item.is-visible:hover { transform:translateY(-4px); }
+    @media (prefers-reduced-motion:reduce) {
+      .reveal-item { opacity:1; transform:none; transition:none; }
+      .card:hover,.lesson:hover,.deliverable:hover,.fit-box:hover,.authority div:hover,details:hover { transform:none; }
+    }
+    @media (max-width:900px) {
+      .section { padding:74px 0; }
+      .hero-grid,.pain-grid,.about-grid,.offer-grid { grid-template-columns:1fr; }
+      .hero { min-height:760px; }
+      .hero-person { right:0; width:44%; height:86%; opacity:.98; }
+      .hero::after { background:linear-gradient(90deg,#0b1008 0%,rgba(11,16,8,.97) 48%,rgba(11,16,8,.78) 67%,rgba(11,16,8,.2) 100%); }
+      .hero-copy { width:min(610px,70%); padding-top:24px; }
+      .risk-card { min-height:420px; }
+      .cards { grid-template-columns:1fr 1fr; }
+      .about-photo { width:min(78vw,430px); margin:auto; }
+      .offer-grid { gap:34px; }
+      .price-card { width:min(100%,480px); margin:auto; }
+    }
+    @media (max-width:620px) {
+      .wrap { width:min(100% - 28px,1140px); }
+      .reveal-left { --reveal-x:-18px; }
+      .reveal-right { --reveal-x:18px; }
+      .hero { display:block; min-height:auto; padding:0; background:#0b1008; }
+      .hero .wrap { width:100%; display:block; }
+      .hero-grid { display:flex; flex-direction:column; }
+      .hero-person { position:relative; right:auto; bottom:auto; order:0; z-index:-2; width:100%; height:350px; object-position:center bottom; opacity:1; filter:contrast(1.03) brightness(.96) saturate(.98); -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%); mask-image:linear-gradient(180deg,#000 0%,#000 76%,transparent 100%); }
+      .hero-money { display:block; position:absolute; inset:0; width:100%; height:100%; object-position:center top; opacity:.22; }
+      .hero::after { background:linear-gradient(180deg,rgba(11,16,8,.04) 0%,rgba(11,16,8,.35) 32%,#0b1008 49%,#0b1008 100%); }
+      .hero-copy { order:1; width:100%; margin-top:-92px; padding:0 20px 34px; text-align:left; }
+      .hero-badge { margin-bottom:14px; font-size:11px; }
+      .hero h1 { font-size:31px; line-height:1.04; }
+      .hero-lead { font-size:16px; }
+      .hero .cta { width:100%; min-width:0; }
+      .benefits li { font-size:14px; }
+      .cards,.content-grid,.deliverables,.fit-grid,.authority { grid-template-columns:1fr; }
+      .section-head { margin-bottom:34px; }
+      .section-head h2 { font-size:32px; }
+      .pain h2,.about h2,.offer-copy h2 { font-size:32px; }
+      .risk-card { min-height:360px; }
+      .about-grid { gap:42px; }
+      .guarantee { grid-template-columns:1fr; justify-items:center; text-align:center; }
+      .price-card { padding:34px 20px; }
+      .final { padding:84px 0 110px; }
+      .mobile-cta { position:fixed; z-index:50; left:10px; right:10px; bottom:10px; display:block; padding:15px 18px; border-radius:8px; background:linear-gradient(135deg,#7ba167,#4f6a45); color:var(--ink); text-align:center; font-size:13px; font-weight:800; box-shadow:0 12px 35px rgba(0,0,0,.55); opacity:0; transform:translateY(16px); pointer-events:none; transition:.25s ease; }
+      .mobile-cta.visible { opacity:1; transform:none; pointer-events:auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <img class="hero-person" src="assets/aline-hero-0925-treated-v3.png" alt="Aline Moraes">
+      <img class="hero-money" src="assets/bg/bg-moedas.jpg" alt="" aria-hidden="true">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-badge">Proteja seu futuro em moeda forte</div>
+            <h1>Descubra como proteger seu patrimônio em moeda forte mesmo que você nunca tenha investido fora do Brasil.</h1>
+            <p class="hero-lead">Com esta masterclass, você conquista clareza e autonomia para dar os primeiros passos no mercado internacional.</p>
+            <a class="cta" href="#oferta">QUERO ACESSAR A MASTERCLASS</a>
+            <ul class="benefits">
+              <li>Comece do zero, sem precisar dominar o mercado financeiro.</li>
+              <li>Entenda o que realmente importa antes de investir fora do Brasil.</li>
+              <li>Estruture sua primeira carteira internacional com clareza.</li>
+              <li>Conte com a masterclass e o ebook para consultar durante 1 ano.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt pain">
+      <div class="wrap pain-grid">
+        <div>
+          <div class="eyebrow">O ponto cego de quem prospera no Brasil</div>
+          <h2>Você fez tudo certo. Mas sua estratégia ainda pode estar incompleta.</h2>
+          <p>Você construiu uma carreira, uma renda sólida e manteve disciplina. Mesmo assim, tudo continua no real, no Brasil e dependente do mesmo cenário econômico.</p>
+          <p>Quando surgem notícias sobre dólar, inflação, instabilidade política ou risco fiscal, aparece a vontade de agir seguida pela mesma dúvida: por onde começar?</p>
+          <p>Artigos se contradizem, perfis prometem demais e as corretoras complicam o que poderia ser simples.</p>
+          <div class="quote">O custo do adiamento não é apenas o dólar de hoje. É o tempo que está passando.</div>
+        </div>
+        <div class="risk-card">
+          <div>
+            <strong>Concentrar tudo no real é apostar todo o futuro em um único cenário.</strong>
+            <span>Diversificar também é proteger as escolhas que você já construiu.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" style="justify-content:center">O que muda depois da masterclass</div>
+          <h2>Investir no exterior é mais acessível do que parece</h2>
+          <p>Você não precisa de uma fortuna inicial nem de uma segunda profissão. Precisa de uma linha de raciocínio clara para separar fundamento de ruído.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">01</div><h3>Você entende o cenário</h3><p>Compreende como inflação, juros e câmbio afetam seu patrimônio e seu poder de compra.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Você conhece os instrumentos</h3><p>Entende o que são ETFs e por que eles simplificam o acesso ao mercado internacional.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Você sabe como começar</h3><p>Organiza os primeiros passos de acordo com seu momento, seus objetivos e sua realidade.</p></article>
+        </div>
+        <div class="center-cta"><a class="cta" href="#conteudo">QUERO VER O QUE ESTÁ INCLUÍDO</a></div>
+      </div>
+    </section>
+
+    <section id="conteudo" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" style="justify-content:center">Conteúdo direto e estruturado</div>
+          <h2>O que você vai encontrar dentro</h2>
+          <p>Uma masterclass gravada e um ebook complementar para você sair do zero com mais clareza, segurança e autonomia.</p>
+        </div>
+        <div class="content-grid">
+          <div class="lesson"><span>✓</span><p>Os riscos reais de manter o patrimônio concentrado em uma única moeda e economia.</p></div>
+          <div class="lesson"><span>✓</span><p>O que são ETFs, como funcionam e por que facilitam a diversificação internacional.</p></div>
+          <div class="lesson"><span>✓</span><p>Como inflação, juros e câmbio se conectam e impactam seu poder de compra.</p></div>
+          <div class="lesson"><span>✓</span><p>Estratégias de construção patrimonial em moeda forte para cada fase da vida.</p></div>
+          <div class="lesson"><span>✓</span><p>Como estruturar sua primeira carteira usando ETFs consolidados no mundo.</p></div>
+          <div class="lesson"><span>✓</span><p>Os principais erros de investidores iniciantes e como evitá-los.</p></div>
+        </div>
+        <div class="deliverables">
+          <article class="deliverable">
+            <small>Entrega principal</small>
+            <h3>Masterclass Proteja seu futuro em moeda forte</h3>
+            <p>Aulas organizadas para transformar conceitos em uma sequência clara de decisões e primeiros passos.</p>
+          </article>
+          <article class="deliverable">
+            <small>Material complementar</small>
+            <h3>Ebook Guia da Diversificação Internacional</h3>
+            <p>Material de consulta com conceitos fundamentais, exemplos práticos e aplicação imediata.</p>
+          </article>
+        </div>
+        <div class="center-cta"><a class="cta" href="#oferta">QUERO A MASTERCLASS + EBOOK</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" style="justify-content:center">Para quem é</div>
+          <h2>Um caminho para quem quer decidir com consciência</h2>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-box yes">
+            <h3>Faz sentido para você se...</h3>
+            <ul>
+              <li>Você tem renda ou patrimônio e quer reduzir a dependência do real.</li>
+              <li>Quer investir fora, mas ainda não encontrou um caminho organizado.</li>
+              <li>Deseja entender ETFs sem complicação técnica ou promessas fáceis.</li>
+              <li>Valoriza segurança, autonomia e construção patrimonial de longo prazo.</li>
+            </ul>
+          </div>
+          <div class="fit-box no">
+            <h3>Não é para você se...</h3>
+            <ul>
+              <li>Procura uma promessa de enriquecimento rápido.</li>
+              <li>Quer apenas copiar uma carteira sem entender as decisões.</li>
+              <li>Não pretende reservar nenhum tempo para aprender os fundamentos.</li>
+              <li>Busca especulação de curto prazo em vez de proteção patrimonial.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt about">
+      <div class="wrap about-grid">
+        <div class="about-photo"><img src="assets/aline-sobre.jpg" alt="Aline Moraes"></div>
+        <div>
+          <p class="signature">Aline Moraes</p>
+          <h2>Por que aprender comigo?</h2>
+          <p>Atuo há mais de 15 anos no mercado financeiro, sendo mais de 6 anos dedicados especificamente ao mercado internacional. Uso a mesma metodologia que ensino na construção do meu próprio patrimônio.</p>
+          <p>Quando me mudei para o Chile, vivi na prática o que significa pensar em mais de uma moeda. Vi a vulnerabilidade de brasileiros bem-sucedidos quando todo o patrimônio estava concentrado em uma única economia.</p>
+          <p>Organizei o que aprendi, na prática e na teoria, em um caminho simples, replicável e honesto. Sem fórmulas mágicas: conceitos sólidos, aplicação prática e uma forma clara de começar.</p>
+          <div class="authority">
+            <div><b>15+ anos</b><span>de atuação no mercado financeiro</span></div>
+            <div><b>6+ anos</b><span>dedicados ao mercado internacional</span></div>
+            <div><b>Na prática</b><span>a mesma metodologia aplicada ao próprio patrimônio</span></div>
+          </div>
+          <a class="cta" href="#oferta">QUERO APRENDER COM A ALINE</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="section">
+      <div class="wrap offer-grid">
+        <div class="offer-copy">
+          <div class="eyebrow">Acesso imediato por 1 ano</div>
+          <h2>Comece hoje a construir uma visão global do seu patrimônio</h2>
+          <p>Por menos do que custa um jantar de fim de semana, você recebe a base de conhecimento que pode acompanhar os próximos anos da sua jornada como investidor.</p>
+          <div class="stack">
+            <div><span>Masterclass completa</span><b>Inclusa</b></div>
+            <div><span>Ebook Guia da Diversificação Internacional</span><b>Incluso</b></div>
+            <div><span>Acesso durante 1 ano</span><b>Incluso</b></div>
+            <div><span>Garantia incondicional de 7 dias</span><b>Inclusa</b></div>
+          </div>
+        </div>
+        <div class="price-card">
+          <span class="tag">Condição especial</span>
+          <p class="from">De R$ 297,00</p>
+          <p class="price">R$ 97</p>
+          <p class="installments">ou em até 10 vezes de R$ 9,70</p>
+          <a class="cta" href="https://pay.hotmart.com/R105053301K?bid=1784156885649&utm_source=lp&utm_medium=site&utm_content=proteja_seu_futuro">QUERO PROTEGER MEU FUTURO EM MOEDA FORTE</a>
+          <p class="safe">Compra 100% segura · Acesso imediato · Garantia de 7 dias</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap guarantee">
+        <div class="seal"><div><b>7</b><span>dias de<br>garantia</span></div></div>
+        <div>
+          <h2>Sua decisão vem sem risco</h2>
+          <p>Acesse a masterclass, leia o ebook e comece a aplicar. Se em 7 dias você sentir que o conteúdo não faz sentido para seu momento, solicite o reembolso e receba 100% do valor de volta.</p>
+          <a class="cta" href="#oferta">QUERO COMEÇAR COM GARANTIA</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" style="justify-content:center">Perguntas frequentes</div>
+          <h2>Ainda com dúvidas?</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Para quem é essa masterclass?</summary><p>Para pessoas que já têm uma renda construída, algum patrimônio acumulado ou estão começando a investir e querem um caminho organizado para diversificar fora do Brasil.</p></details>
+          <details><summary>Preciso conhecer o mercado financeiro?</summary><p>Não. A masterclass parte dos conceitos fundamentais e conduz o raciocínio passo a passo, mesmo que você nunca tenha comprado um ativo fora do Brasil.</p></details>
+          <details><summary>Preciso de muito dinheiro para começar?</summary><p>Não. Hoje é possível começar com valores acessíveis, e o conteúdo ajuda você a compreender como dar os primeiros passos.</p></details>
+          <details><summary>Quanto tempo terei de acesso?</summary><p>Você terá 1 ano de acesso à masterclass e ao ebook.</p></details>
+          <details><summary>Como recebo o conteúdo depois da compra?</summary><p>O acesso é imediato. Após a confirmação do pagamento, os dados de login são enviados ao e-mail cadastrado.</p></details>
+          <details><summary>E se eu quiser cancelar?</summary><p>Você tem 7 dias de garantia. Dentro desse período, pode solicitar o reembolso integral caso o conteúdo não faça sentido para você.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Você já sabe o que precisa ser feito. O que falta é começar.</h2>
+        <p>Construa uma base sólida para tomar decisões, proteger seu poder de compra e ampliar sua visão patrimonial.</p>
+        <a class="cta" href="#oferta">QUERO PROTEGER MEU FUTURO EM MOEDA FORTE</a>
+        <p class="signature" style="margin-top:34px">Aline Moraes</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© Aline Moraes · Conteúdo educacional. Rentabilidade passada não garante resultados futuros.</div></footer>
+  <a class="mobile-cta" href="#oferta">QUERO ACESSAR A MASTERCLASS</a>
+  <script>
+    const hero = document.querySelector('.hero');
+    const mobileCta = document.querySelector('.mobile-cta');
+    if (hero && mobileCta && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        mobileCta.classList.toggle('visible', !entry.isIntersecting);
+      }, { threshold: 0.08 }).observe(hero);
+    }
+    const revealItems = document.querySelectorAll('.card,.lesson,.deliverable,.fit-box,.authority div,.price-card,.risk-card,.about-photo,.seal,details');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    revealItems.forEach((item, index) => {
+      item.classList.add('reveal-item', index % 2 === 0 ? 'reveal-left' : 'reveal-right');
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+    });
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+  </script>
+</body>
+</html>
